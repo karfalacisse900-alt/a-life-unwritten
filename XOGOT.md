@@ -4,9 +4,13 @@ This is a standard Godot GDScript project. It does not require .NET, Windows,
 real trading accounts, or an exported iOS app. Use the current Xogot release.
 Xogot 1.6 is based on Godot 4.6.1; this project targets that engine version or newer.
 
-1. Transfer `A-Life-Unwritten-Xogot.zip` to iCloud Drive or your device's Files app.
-2. In Files, tap the ZIP once to unzip it. Inside is the `A Life Unwritten` folder,
-   containing `project.godot`, `main.tscn`, `assets`, `data`, and `scripts`.
+1. From this GitHub repository, either download the attached Xogot ZIP from the
+   Releases section, or tap **Code > Download ZIP** for the source project. Save
+   that ZIP to iCloud Drive or your device's Files app.
+2. In Files, tap the ZIP once to unzip it. The source download creates an
+   `a-life-unwritten-main` folder; the release ZIP creates an `A Life Unwritten`
+   folder. Use the folder containing `project.godot`, `main.tscn`, `assets`,
+   `data`, and `scripts`.
 3. Copy the whole `A Life Unwritten` folder to **On My iPad > Xogot** (or
    **On My iPhone > Xogot**). Keep the folder structure intact.
 4. Open Xogot, find the project in its project manager, and open it. Restart
