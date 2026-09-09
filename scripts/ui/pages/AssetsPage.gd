@@ -28,16 +28,17 @@ func draw(ui: UiKit, state: LifeGameState, ctx: Dictionary) -> void:
 	ui.hits.append_array(content_hits)
 	ui.host.draw_rect(Rect2(0, 0, 540, CONTENT_TOP), UiKit.BG)
 	ui.host.draw_rect(Rect2(0, CONTENT_BOTTOM, 540, 158), UiKit.BG)
-	ui.header("ASSETS", "YOUR MONEY, COLLECTION & POSSIBILITIES", state.cash, str(ctx.get("date_text", "")))
-	ui.chip(Rect2(18, TAB_TOP, 158, 40), "OWNED", tab == "owned", "asset_tab", "owned")
-	ui.chip(Rect2(191, TAB_TOP, 158, 40), "MARKETS", tab == "market", "asset_tab", "market")
-	ui.chip(Rect2(364, TAB_TOP, 158, 40), "BANKING", tab == "ledger", "asset_tab", "ledger")
 	if tab == "market":
-		_draw_market_section_tabs(ui, str(ctx.get("market_section","portfolio")))
-	elif tab == "owned":
+		_draw_market_section_tabs(ui, str(ctx.get("market_section", "portfolio")), str(ctx.get("asset_category", "")))
+	if tab != "market":
+		ui.chip(Rect2(18, TAB_TOP, 158, 40), "OWNED", tab == "owned", "asset_tab", "owned")
+		ui.chip(Rect2(191, TAB_TOP, 158, 40), "MARKETS", tab == "market", "asset_tab", "market")
+		ui.chip(Rect2(364, TAB_TOP, 158, 40), "BANKING", tab == "ledger", "asset_tab", "ledger")
+	if tab == "owned":
 		_draw_category_chips(ui, _selected_category(ctx,"all"))
-	else:
-		ui.text("Every balance has a story.", Vector2(21,180), 12, UiKit.MUTED)
+	# Draw the fixed header last so a market card or clipped canvas operation can
+	# never cover the title, cash, or date on a smaller mobile viewport.
+	ui.header("ASSETS", "YOUR MONEY, COLLECTION & POSSIBILITIES", state.cash, str(ctx.get("date_text", "")))
 
 func _draw_owned(ui: UiKit, state: LifeGameState, ctx: Dictionary) -> void:
 	var category := _selected_category(ctx, "all")
@@ -107,7 +108,6 @@ func _draw_market(ui: UiKit, state: LifeGameState, ctx: Dictionary) -> void:
 	var section := str(ctx.get("market_section", "portfolio"))
 	if not section in ["portfolio", "stock", "etf", "crypto", "bond", "things"]:
 		section = "portfolio"
-	_draw_market_section_tabs(ui, section)
 	match section:
 		"portfolio":
 			_draw_market_portfolio(ui, ctx)
@@ -117,28 +117,38 @@ func _draw_market(ui: UiKit, state: LifeGameState, ctx: Dictionary) -> void:
 			_draw_security_market(ui, state, ctx, section)
 
 
-func _draw_market_section_tabs(ui: UiKit, selected: String) -> void:
-	var tabs: Array[Dictionary] = [
+func _draw_market_section_tabs(ui: UiKit, selected: String, category: String = "") -> void:
+	var mode := "portfolio" if selected == "portfolio" else ("shop" if selected == "things" else ("money" if selected == "ledger" else "trade"))
+	var outer := Rect2(18, 106, 504, 38)
+	var modes: Array[Dictionary] = [
 		{"id":"portfolio", "label":"PORTFOLIO"},
-		{"id":"stock", "label":"STOCKS"},
-		{"id":"etf", "label":"FUNDS"},
-		{"id":"crypto", "label":"CRYPTO"},
-		{"id":"bond", "label":"BONDS"},
-		{"id":"things", "label":"THINGS"},
+		{"id":"trade", "label":"TRADE", "arg":"stock"},
+		{"id":"shop", "label":"SHOP", "arg":"things"},
+		{"id":"money", "label":"MONEY", "arg":"ledger", "action":"asset_tab"},
 	]
-	var outer := Rect2(18, 157, 504, 34)
-	ui.panel(outer, UiKit.WHITE, Color("d8dee6"), 9, 1)
-	var width := outer.size.x / float(tabs.size())
-	for index in tabs.size():
-		var tab: Dictionary = tabs[index]
-		var tab_id := str(tab.get("id", ""))
+	var width := outer.size.x / float(modes.size())
+	for index in modes.size():
+		var item: Dictionary = modes[index]
+		var item_id := str(item.get("id", ""))
 		var rect := Rect2(outer.position.x + width * index, outer.position.y, width, outer.size.y)
-		if tab_id == selected:
+		if item_id == mode:
 			ui.panel(rect.grow(-2), UiKit.BLUE_DARK, UiKit.BLUE_DARK, 7, 0)
-		elif index > 0:
-			ui.host.draw_line(Vector2(rect.position.x, rect.position.y + 8), Vector2(rect.position.x, rect.end.y - 8), UiKit.LINE, 1)
-		ui.text(str(tab.get("label", "")), Vector2(rect.position.x, rect.position.y + 22), 9, UiKit.WHITE if tab_id == selected else UiKit.MUTED, rect.size.x, HORIZONTAL_ALIGNMENT_CENTER)
-		ui.register(rect, "market_section", tab_id)
+		ui.text(str(item.get("label", "")), Vector2(rect.position.x, rect.position.y + 24), 10, UiKit.WHITE if item_id == mode else UiKit.MUTED, rect.size.x, HORIZONTAL_ALIGNMENT_CENTER)
+		ui.register(rect, str(item.get("action", "market_section")), item.get("arg", item_id))
+
+	if mode == "portfolio": return
+	if mode == "money": return
+	var choices: Array[Dictionary] = []
+	if mode == "trade":
+		choices = [{"id":"stock", "label":"Stocks"}, {"id":"crypto", "label":"Crypto"}, {"id":"etf", "label":"Funds"}, {"id":"bond", "label":"Bonds"}]
+	else:
+		choices = [{"id":"vehicle", "label":"Cars"}, {"id":"collectible", "label":"Art"}, {"id":"property", "label":"Homes"}, {"id":"equipment", "label":"Gear"}]
+	for index in choices.size():
+		var choice: Dictionary = choices[index]
+		var choice_id := str(choice.get("id", ""))
+		var selected_choice := choice_id == selected if mode == "trade" else choice_id == category
+		var rect := Rect2(18 + index * 126, 157, 118, 32)
+		ui.chip(rect, str(choice.get("label", "")), selected_choice, "market_section" if mode == "trade" else "asset_category", choice_id)
 
 
 func _draw_security_market(ui: UiKit, state: LifeGameState, ctx: Dictionary, asset_class: String) -> void:
@@ -205,8 +215,8 @@ func _draw_security_row(ui: UiKit, state: LifeGameState, item: Dictionary, order
 	ui.text("POSITION", rect.position + Vector2(190, 78), 8, UiKit.MUTED)
 	ui.text(owned_label if owned_units > 0 else "None", rect.position + Vector2(190, 96), 11, UiKit.INK, 125)
 	ui.text("Choose quantity to trade", rect.position + Vector2(190, 114), 9, UiKit.MUTED, 135)
-	ui.button(Rect2(rect.position + Vector2(332, 73), Vector2(70, 35)), "Buy", "buy_market", symbol, accent, buy_enabled)
-	ui.button(Rect2(rect.position + Vector2(410, 73), Vector2(70, 35)), "Sell", "sell_market", symbol, UiKit.BLUE_DARK, sell_enabled)
+	var order_action := "buy_market" if buy_enabled or not sell_enabled else "sell_market"
+	ui.button(Rect2(rect.position + Vector2(332, 73), Vector2(148, 35)), "Trade", order_action, symbol, accent, buy_enabled or sell_enabled)
 
 
 func _draw_market_portfolio(ui: UiKit, ctx: Dictionary) -> void:
@@ -327,9 +337,6 @@ func _draw_physical_market(ui: UiKit, state: LifeGameState, ctx: Dictionary) -> 
 		category = "vehicle"
 	var scroll := float(ctx.get("scroll", 0.0))
 	var y := CONTENT_TOP + 6.0 - scroll
-	if _fully_visible(y, 36):
-		_draw_physical_filters(ui, category, y)
-	y += 48.0
 	if category == "vehicle":
 		_draw_vehicle_market(ui, state, ctx, y)
 		return
@@ -735,10 +742,10 @@ func get_scroll_limit(_state: LifeGameState, ctx: Dictionary) -> float:
 		if section == "things":
 			if category not in ["vehicle","property","collectible","equipment"]: category="vehicle"
 			if category == "vehicle":
-				total = 56+(ctx.get("vehicle_catalog",[]) as Array).size()*254
+				total = 8+(ctx.get("vehicle_catalog",[]) as Array).size()*254
 				if not (ctx.get("owned_vehicle",{}) as Dictionary).is_empty(): total += 282
 			else:
-				total = 56+_filter_category(ctx.get("physical_catalog",ctx.get("catalog",[])),category).size()*230
+				total = 8+_filter_category(ctx.get("physical_catalog",ctx.get("catalog",[])),category).size()*230
 		elif section == "portfolio":
 			var holding_count := (ctx.get("market_holdings",[]) as Array).size()
 			total = 8+138+116+32+maxi(1,holding_count)*92+32+mini(4,(ctx.get("market_news",[]) as Array).size())*80

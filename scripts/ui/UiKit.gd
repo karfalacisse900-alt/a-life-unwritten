@@ -20,6 +20,7 @@ const TITLE_FONT = preload("res://assets/fonts/LibreBaskerville.ttf")
 var host: CanvasItem
 var hits: Array[Dictionary]
 var hover_key := ""
+var _style_cache: Dictionary = {}
 
 func begin(canvas: CanvasItem, target_hits: Array[Dictionary], current_hover: String) -> void:
 	host = canvas
@@ -27,12 +28,16 @@ func begin(canvas: CanvasItem, target_hits: Array[Dictionary], current_hover: St
 	hover_key = current_hover
 
 func panel(rect: Rect2, fill: Color, border: Color = LINE, radius: int = 12, border_width: int = 1) -> void:
-	var style := StyleBoxFlat.new()
-	style.bg_color = fill
-	style.border_color = border
-	style.set_border_width_all(border_width)
-	style.set_corner_radius_all(radius)
-	style.shadow_size = 0
+	var cache_key := "%s|%s|%d|%d" % [fill.to_html(false), border.to_html(false), radius, border_width]
+	var style: StyleBoxFlat = _style_cache.get(cache_key)
+	if style == null:
+		style = StyleBoxFlat.new()
+		style.bg_color = fill
+		style.border_color = border
+		style.set_border_width_all(border_width)
+		style.set_corner_radius_all(radius)
+		style.shadow_size = 0
+		_style_cache[cache_key] = style
 	style.anti_aliasing = true
 	host.draw_style_box(style, rect)
 

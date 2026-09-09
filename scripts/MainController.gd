@@ -64,10 +64,10 @@ var scrolls := {"life":0.0, "city":0.0, "occupation":0.0, "assets":0.0, "people"
 var districts: Array[Dictionary] = []
 var advancing := false
 var last_advance_msec := 0
-var nav_textures: Dictionary = {}
 var touch_dragged := false
 var touch_start := Vector2.ZERO
 var touch_index := -1
+var last_scroll_draw_msec := 0
 var persistence_enabled := true
 var trade_ticket: Control
 var name_input: LineEdit
@@ -90,9 +90,6 @@ func _ready() -> void:
 	vehicle_system = VehicleFinanceSystem.new()
 	_setup_native_inputs()
 	districts = _load_array("res://data/districts.json", "districts")
-	for item in NAV_ITEMS:
-		var texture := load(str(item.icon))
-		if texture is Texture2D: nav_textures[str(item.id)] = texture
 	_apply_qa_args()
 	_sync_name_input()
 	get_viewport().size_changed.connect(queue_redraw)
@@ -429,6 +426,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif event.index == touch_index:
 			touch_index = -1
 			if not touch_dragged: _activate_at(event.position)
+			queue_redraw()
 		return
 	if event is InputEventScreenDrag:
 		if touch_index != -1 and event.index != touch_index: return
@@ -901,7 +899,13 @@ func _scroll_current(delta: float) -> void:
 	if screen_mode != "game" or not overlay_mode.is_empty(): return
 	if trade_ticket != null and trade_ticket.visible: return
 	scrolls[current_page] = clampf(float(scrolls.get(current_page, 0.0)) + delta, 0.0, _current_scroll_limit())
-	queue_redraw()
+	# Touch drags can arrive hundreds of times per second. Rendering at a steady
+	# 30 Hz keeps scrolling responsive on older phones without changing the
+	# simulation or losing the final position.
+	var now := Time.get_ticks_msec()
+	if now - last_scroll_draw_msec >= 33:
+		last_scroll_draw_msec = now
+		queue_redraw()
 
 func _current_scroll_limit() -> float:
 	if current_page == "assets":
