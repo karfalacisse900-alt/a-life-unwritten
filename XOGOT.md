@@ -11,7 +11,7 @@ Xogot 1.6 is based on Godot 4.6.1; this project targets that engine version or n
    `a-life-unwritten-main` folder; the release ZIP creates an `A Life Unwritten`
    folder. Use the folder containing `project.godot`, `main.tscn`, `assets`,
    `data`, and `scripts`.
-3. Copy the whole `A Life Unwritten` folder to **On My iPad > Xogot** (or
+3. Copy that whole project folder to **On My iPad > Xogot** (or
    **On My iPhone > Xogot**). Keep the folder structure intact.
 4. Open Xogot, find the project in its project manager, and open it. Restart
    Xogot if the copied folder has not appeared yet. Let first-time asset import finish.
