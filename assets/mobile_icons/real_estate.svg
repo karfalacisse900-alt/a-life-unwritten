@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="house-roof" x1="11" y1="30" x2="52" y2="15" gradientUnits="userSpaceOnUse"><stop stop-color="#FF826A"/><stop offset="1" stop-color="#EE3F65"/></linearGradient>
+    <linearGradient id="house-wall" x1="15" y1="28" x2="49" y2="56" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF1B7"/><stop offset="1" stop-color="#FFBF62"/></linearGradient>
+    <linearGradient id="house-lawn" x1="5" y1="46" x2="59" y2="57" gradientUnits="userSpaceOnUse"><stop stop-color="#80EA75"/><stop offset="1" stop-color="#24B76E"/></linearGradient>
+  </defs>
+  <path d="M5 51c0-5.2 4.2-9.4 9.4-9.4h35.2c5.2 0 9.4 4.2 9.4 9.4v5H5v-5Z" fill="url(#house-lawn)" stroke="#14294B" stroke-width="2.6"/>
+  <path d="M15 26.5 32 13l17 13.5v27H15v-27Z" fill="url(#house-wall)" stroke="#14294B" stroke-width="2.8" stroke-linejoin="round"/>
+  <path d="m8.5 29.5 21-17a4 4 0 0 1 5 0l21 17-4.8 6.1L32 20.5 13.3 35.6l-4.8-6.1Z" fill="url(#house-roof)" stroke="#14294B" stroke-width="2.8" stroke-linejoin="round"/>
+  <rect x="27" y="38" width="10" height="15.5" rx="2" fill="#8B65DF" stroke="#14294B" stroke-width="2.2"/>
+  <rect x="18.5" y="31.5" width="7" height="8" rx="1.5" fill="#6AD7F2" stroke="#14294B" stroke-width="2"/><rect x="38.5" y="31.5" width="7" height="8" rx="1.5" fill="#6AD7F2" stroke="#14294B" stroke-width="2"/>
+  <path d="M18 25.6 31.2 15" stroke="#FFF" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+  <circle cx="34" cy="46" r="1.2" fill="#FFF6C7"/>
+</svg>

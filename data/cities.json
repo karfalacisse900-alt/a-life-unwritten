@@ -1,0 +1,220 @@
+{
+  "version": 1,
+  "currency": "USD",
+  "default_city_id": "bellwether",
+  "travel_modes": [
+    {
+      "id": "coach",
+      "name": "Intercity Coach",
+      "description": "The inexpensive option. Slower, but luggage is included.",
+      "base_fare": 24,
+      "rate_per_100_km": 11,
+      "speed_kmh": 72,
+      "terminal_hours": 1.0,
+      "minimum_distance_km": 0,
+      "connection_key": "coach",
+      "requires_owned_vehicle": false
+    },
+    {
+      "id": "rail",
+      "name": "Cityline Rail",
+      "description": "Comfortable center-to-center travel with predictable journey times.",
+      "base_fare": 38,
+      "rate_per_100_km": 18,
+      "speed_kmh": 145,
+      "terminal_hours": 0.75,
+      "minimum_distance_km": 80,
+      "connection_key": "rail",
+      "requires_owned_vehicle": false
+    },
+    {
+      "id": "flight",
+      "name": "Regional Flight",
+      "description": "Fast over long distances, with airport transfers and a checked bag.",
+      "base_fare": 118,
+      "rate_per_100_km": 24,
+      "speed_kmh": 660,
+      "terminal_hours": 3.0,
+      "minimum_distance_km": 350,
+      "connection_key": "airport",
+      "requires_owned_vehicle": false
+    },
+    {
+      "id": "own_car",
+      "name": "Drive Your Car",
+      "description": "Flexible door-to-door travel. The quote includes fuel, tolls, and road wear.",
+      "base_fare": 18,
+      "rate_per_100_km": 15,
+      "speed_kmh": 82,
+      "terminal_hours": 0.25,
+      "minimum_distance_km": 0,
+      "connection_key": "road",
+      "requires_owned_vehicle": true
+    }
+  ],
+  "cities": [
+    {
+      "id": "bellwether",
+      "name": "Bellwether",
+      "region": "Amber River Region",
+      "tagline": "Balanced costs, steady work, familiar streets",
+      "description": "A river city with mixed neighborhoods, a growing commercial core, and a forgiving place to begin adult life.",
+      "accent": "#466B75",
+      "rent_index_basis_points": 10000,
+      "utility_index_basis_points": 10000,
+      "income_tax_basis_points": 270,
+      "job_market_basis_points": 10000,
+      "salary_index_basis_points": 10000,
+      "moving_base_cost": 180,
+      "connections": {"road": true, "coach": true, "rail": true, "airport": true},
+      "distances_km": {"virelia": 410, "dunmarrow": 285, "solmere": 940, "ironvale": 520, "auremont": 760},
+      "default_transport_id": "bus_pass",
+      "housing": [
+        {"id": "family_home", "name": "Family Spare Room", "description": "Stay with family and contribute to household utilities.", "monthly_rent": 0, "monthly_utilities": 80, "deposit": 0, "moving_fee": 0, "min_weekly_income": 0, "min_cash_after_move": 0},
+        {"id": "rented_room", "name": "Room in Riverside", "description": "A private room in a shared townhouse near a bus corridor.", "monthly_rent": 620, "monthly_utilities": 110, "deposit": 620, "moving_fee": 115, "min_weekly_income": 0, "min_cash_after_move": 100},
+        {"id": "city_apartment", "name": "Central One-Bedroom", "description": "A private apartment with reliable transit and a short downtown commute.", "monthly_rent": 1400, "monthly_utilities": 190, "deposit": 1400, "moving_fee": 260, "min_weekly_income": 600, "min_cash_after_move": 500}
+      ],
+      "local_transport": [
+        {"id": "walk_cycle", "name": "Walk & Cycle", "description": "No fare, but a long commute uses more of the week.", "monthly_pass": 0, "monthly_insurance": 0, "monthly_parking": 0, "weekly_fares": 0, "weekly_fuel": 0, "commute_hours_weekly": 7, "reliability_percent": 90, "requires_owned_vehicle": false},
+        {"id": "payg_bus", "name": "Pay-As-You-Go Bus", "description": "Pay for each workday instead of committing to a pass.", "monthly_pass": 0, "monthly_insurance": 0, "monthly_parking": 0, "weekly_fares": 24, "weekly_fuel": 0, "commute_hours_weekly": 5, "reliability_percent": 88, "requires_owned_vehicle": false},
+        {"id": "bus_pass", "name": "RiverBus Monthly Pass", "description": "Unlimited local buses, paid at each monthly boundary.", "monthly_pass": 82, "monthly_insurance": 0, "monthly_parking": 0, "weekly_fares": 0, "weekly_fuel": 0, "commute_hours_weekly": 5, "reliability_percent": 88, "requires_owned_vehicle": false},
+        {"id": "own_car", "name": "Commute by Car", "description": "Quicker, with fuel, insurance, and parking to cover.", "monthly_pass": 0, "monthly_insurance": 126, "monthly_parking": 55, "weekly_fares": 0, "weekly_fuel": 34, "commute_hours_weekly": 3, "reliability_percent": 94, "requires_owned_vehicle": true}
+      ]
+    },
+    {
+      "id": "virelia",
+      "name": "Virelia",
+      "region": "Luminous Coast",
+      "tagline": "High salaries, fierce rent, excellent transit",
+      "description": "A dense coastal technology and finance center where opportunity is abundant and every square foot is expensive.",
+      "accent": "#4F6F9C",
+      "rent_index_basis_points": 14300,
+      "utility_index_basis_points": 11200,
+      "income_tax_basis_points": 510,
+      "job_market_basis_points": 12100,
+      "salary_index_basis_points": 12800,
+      "moving_base_cost": 360,
+      "connections": {"road": true, "coach": true, "rail": true, "airport": true},
+      "distances_km": {"bellwether": 410, "dunmarrow": 675, "solmere": 610, "ironvale": 820, "auremont": 355},
+      "default_transport_id": "metro_pass",
+      "housing": [
+        {"id": "rented_room", "name": "Harbor House Share", "description": "A compact room with three housemates beside an elevated rail line.", "monthly_rent": 930, "monthly_utilities": 145, "deposit": 930, "moving_fee": 190, "min_weekly_income": 350, "min_cash_after_move": 250},
+        {"id": "city_apartment", "name": "Glassway Studio", "description": "A modern studio near the business loop, small but private.", "monthly_rent": 2075, "monthly_utilities": 225, "deposit": 2075, "moving_fee": 390, "min_weekly_income": 900, "min_cash_after_move": 750}
+      ],
+      "local_transport": [
+        {"id": "walk_cycle", "name": "Walk & Cycle", "description": "Dense streets make this possible if time is flexible.", "monthly_pass": 0, "monthly_insurance": 0, "monthly_parking": 0, "weekly_fares": 0, "weekly_fuel": 0, "commute_hours_weekly": 8, "reliability_percent": 87, "requires_owned_vehicle": false},
+        {"id": "payg_metro", "name": "Metro Single Fares", "description": "Tap in for each shift; convenient for irregular work.", "monthly_pass": 0, "monthly_insurance": 0, "monthly_parking": 0, "weekly_fares": 38, "weekly_fuel": 0, "commute_hours_weekly": 4, "reliability_percent": 93, "requires_owned_vehicle": false},
+        {"id": "metro_pass", "name": "Virelia Metro Pass", "description": "Unlimited metro and municipal bus travel.", "monthly_pass": 138, "monthly_insurance": 0, "monthly_parking": 0, "weekly_fares": 0, "weekly_fuel": 0, "commute_hours_weekly": 4, "reliability_percent": 93, "requires_owned_vehicle": false},
+        {"id": "own_car", "name": "Commute by Car", "description": "Fast outside rush hour; parking makes it costly.", "monthly_pass": 0, "monthly_insurance": 168, "monthly_parking": 260, "weekly_fares": 0, "weekly_fuel": 42, "commute_hours_weekly": 4, "reliability_percent": 89, "requires_owned_vehicle": true}
+      ]
+    },
+    {
+      "id": "dunmarrow",
+      "name": "Dunmarrow",
+      "region": "Cedar Basin",
+      "tagline": "Lower rent, calmer pace, thinner job market",
+      "description": "A green inland college town with modest rents, dependable public services, and fewer high-paying vacancies.",
+      "accent": "#637A55",
+      "rent_index_basis_points": 7900,
+      "utility_index_basis_points": 9100,
+      "income_tax_basis_points": 190,
+      "job_market_basis_points": 8200,
+      "salary_index_basis_points": 8700,
+      "moving_base_cost": 145,
+      "connections": {"road": true, "coach": true, "rail": true, "airport": false},
+      "distances_km": {"bellwether": 285, "virelia": 675, "solmere": 1040, "ironvale": 360, "auremont": 805},
+      "default_transport_id": "bus_pass",
+      "housing": [
+        {"id": "rented_room", "name": "Cedar Basin Room", "description": "A bright room in an older duplex near the university bus.", "monthly_rent": 490, "monthly_utilities": 95, "deposit": 490, "moving_fee": 90, "min_weekly_income": 0, "min_cash_after_move": 75},
+        {"id": "city_apartment", "name": "Market Lane Apartment", "description": "A roomy one-bedroom above small neighborhood shops.", "monthly_rent": 1080, "monthly_utilities": 165, "deposit": 1080, "moving_fee": 210, "min_weekly_income": 480, "min_cash_after_move": 350}
+      ],
+      "local_transport": [
+        {"id": "walk_cycle", "name": "Walk & Cycle", "description": "Quiet streets and cycle paths, with a longer trip in winter.", "monthly_pass": 0, "monthly_insurance": 0, "monthly_parking": 0, "weekly_fares": 0, "weekly_fuel": 0, "commute_hours_weekly": 6, "reliability_percent": 89, "requires_owned_vehicle": false},
+        {"id": "payg_bus", "name": "Local Bus Fares", "description": "Best for part-time schedules.", "monthly_pass": 0, "monthly_insurance": 0, "monthly_parking": 0, "weekly_fares": 18, "weekly_fuel": 0, "commute_hours_weekly": 5, "reliability_percent": 85, "requires_owned_vehicle": false},
+        {"id": "bus_pass", "name": "CedarLink Pass", "description": "Unlimited town and campus buses.", "monthly_pass": 64, "monthly_insurance": 0, "monthly_parking": 0, "weekly_fares": 0, "weekly_fuel": 0, "commute_hours_weekly": 5, "reliability_percent": 85, "requires_owned_vehicle": false},
+        {"id": "own_car", "name": "Commute by Car", "description": "Cheap parking and short roads make driving practical.", "monthly_pass": 0, "monthly_insurance": 112, "monthly_parking": 25, "weekly_fares": 0, "weekly_fuel": 29, "commute_hours_weekly": 2, "reliability_percent": 96, "requires_owned_vehicle": true}
+      ]
+    },
+    {
+      "id": "solmere",
+      "name": "Solmere",
+      "region": "Sunward Gulf",
+      "tagline": "Creative economy, warm weather, costly power",
+      "description": "A sunlit gulf city built around design, hospitality, events, and a fast-growing independent business scene.",
+      "accent": "#B5794E",
+      "rent_index_basis_points": 11900,
+      "utility_index_basis_points": 13700,
+      "income_tax_basis_points": 330,
+      "job_market_basis_points": 10800,
+      "salary_index_basis_points": 10500,
+      "moving_base_cost": 320,
+      "connections": {"road": true, "coach": true, "rail": false, "airport": true},
+      "distances_km": {"bellwether": 940, "virelia": 610, "dunmarrow": 1040, "ironvale": 785, "auremont": 680},
+      "default_transport_id": "bus_pass",
+      "housing": [
+        {"id": "rented_room", "name": "Marigold House Share", "description": "A shaded room with shared courtyard space near frequent buses.", "monthly_rent": 760, "monthly_utilities": 160, "deposit": 760, "moving_fee": 155, "min_weekly_income": 250, "min_cash_after_move": 180},
+        {"id": "city_apartment", "name": "Canal Quarter One-Bedroom", "description": "A colorful private apartment close to restaurants and studios.", "monthly_rent": 1680, "monthly_utilities": 260, "deposit": 1680, "moving_fee": 330, "min_weekly_income": 720, "min_cash_after_move": 600}
+      ],
+      "local_transport": [
+        {"id": "walk_cycle", "name": "Walk & Cycle", "description": "Free, although summer heat makes the commute tiring.", "monthly_pass": 0, "monthly_insurance": 0, "monthly_parking": 0, "weekly_fares": 0, "weekly_fuel": 0, "commute_hours_weekly": 8, "reliability_percent": 84, "requires_owned_vehicle": false},
+        {"id": "payg_bus", "name": "Bus & Ferry Fares", "description": "Pay by trip across the canal network.", "monthly_pass": 0, "monthly_insurance": 0, "monthly_parking": 0, "weekly_fares": 29, "weekly_fuel": 0, "commute_hours_weekly": 6, "reliability_percent": 84, "requires_owned_vehicle": false},
+        {"id": "bus_pass", "name": "SunLoop Pass", "description": "Unlimited buses and neighborhood ferries.", "monthly_pass": 96, "monthly_insurance": 0, "monthly_parking": 0, "weekly_fares": 0, "weekly_fuel": 0, "commute_hours_weekly": 6, "reliability_percent": 84, "requires_owned_vehicle": false},
+        {"id": "own_car", "name": "Commute by Car", "description": "Air-conditioned and faster, with insurance, fuel, and parking.", "monthly_pass": 0, "monthly_insurance": 142, "monthly_parking": 85, "weekly_fares": 0, "weekly_fuel": 39, "commute_hours_weekly": 3, "reliability_percent": 94, "requires_owned_vehicle": true}
+      ]
+    },
+    {
+      "id": "ironvale",
+      "name": "Ironvale",
+      "region": "Foundry Highlands",
+      "tagline": "Strong trades, cheap space, demanding winters",
+      "description": "A highland manufacturing city with logistics work, affordable housing, and above-average heating bills.",
+      "accent": "#6B6670",
+      "rent_index_basis_points": 8600,
+      "utility_index_basis_points": 12800,
+      "income_tax_basis_points": 240,
+      "job_market_basis_points": 11100,
+      "salary_index_basis_points": 9700,
+      "moving_base_cost": 220,
+      "connections": {"road": true, "coach": true, "rail": true, "airport": false},
+      "distances_km": {"bellwether": 520, "virelia": 820, "dunmarrow": 360, "solmere": 785, "auremont": 570},
+      "default_transport_id": "bus_pass",
+      "housing": [
+        {"id": "rented_room", "name": "Foundry Row Room", "description": "A sturdy room close to warehouses and late-shift buses.", "monthly_rent": 535, "monthly_utilities": 145, "deposit": 535, "moving_fee": 115, "min_weekly_income": 0, "min_cash_after_move": 100},
+        {"id": "city_apartment", "name": "Highland Brick Apartment", "description": "A renovated one-bedroom with efficient heating and garage storage.", "monthly_rent": 1190, "monthly_utilities": 235, "deposit": 1190, "moving_fee": 245, "min_weekly_income": 520, "min_cash_after_move": 400}
+      ],
+      "local_transport": [
+        {"id": "walk_cycle", "name": "Walk & Cycle", "description": "Free but slow across steep roads and winter weather.", "monthly_pass": 0, "monthly_insurance": 0, "monthly_parking": 0, "weekly_fares": 0, "weekly_fuel": 0, "commute_hours_weekly": 9, "reliability_percent": 78, "requires_owned_vehicle": false},
+        {"id": "payg_bus", "name": "Shift Bus Fares", "description": "Routes are timed around factory shifts.", "monthly_pass": 0, "monthly_insurance": 0, "monthly_parking": 0, "weekly_fares": 21, "weekly_fuel": 0, "commute_hours_weekly": 5, "reliability_percent": 91, "requires_owned_vehicle": false},
+        {"id": "bus_pass", "name": "ValeTransit Pass", "description": "Unlimited city and industrial-zone buses.", "monthly_pass": 72, "monthly_insurance": 0, "monthly_parking": 0, "weekly_fares": 0, "weekly_fuel": 0, "commute_hours_weekly": 5, "reliability_percent": 91, "requires_owned_vehicle": false},
+        {"id": "own_car", "name": "Commute by Car", "description": "Useful for industrial shifts, with winter fuel and insurance costs.", "monthly_pass": 0, "monthly_insurance": 132, "monthly_parking": 35, "weekly_fares": 0, "weekly_fuel": 43, "commute_hours_weekly": 3, "reliability_percent": 92, "requires_owned_vehicle": true}
+      ]
+    },
+    {
+      "id": "auremont",
+      "name": "Auremont",
+      "region": "Civic Plateau",
+      "tagline": "Public careers, premium housing, dependable services",
+      "description": "A monumental hill city of government offices, hospitals, consultancies, museums, and orderly residential districts.",
+      "accent": "#79698A",
+      "rent_index_basis_points": 13200,
+      "utility_index_basis_points": 10500,
+      "income_tax_basis_points": 560,
+      "job_market_basis_points": 11500,
+      "salary_index_basis_points": 11900,
+      "moving_base_cost": 340,
+      "connections": {"road": true, "coach": true, "rail": true, "airport": true},
+      "distances_km": {"bellwether": 760, "virelia": 355, "dunmarrow": 805, "solmere": 680, "ironvale": 570},
+      "default_transport_id": "rail_pass",
+      "housing": [
+        {"id": "rented_room", "name": "Civic Terrace Room", "description": "A quiet room in a rowhouse on the suburban rail line.", "monthly_rent": 845, "monthly_utilities": 125, "deposit": 845, "moving_fee": 175, "min_weekly_income": 300, "min_cash_after_move": 220},
+        {"id": "city_apartment", "name": "Museum District Apartment", "description": "A polished private apartment within walking distance of major offices.", "monthly_rent": 1880, "monthly_utilities": 205, "deposit": 1880, "moving_fee": 365, "min_weekly_income": 820, "min_cash_after_move": 700}
+      ],
+      "local_transport": [
+        {"id": "walk_cycle", "name": "Walk & Cycle", "description": "Beautiful routes, though the plateau is steep.", "monthly_pass": 0, "monthly_insurance": 0, "monthly_parking": 0, "weekly_fares": 0, "weekly_fuel": 0, "commute_hours_weekly": 8, "reliability_percent": 86, "requires_owned_vehicle": false},
+        {"id": "payg_rail", "name": "Rail Single Fares", "description": "Flexible fares for occasional shifts.", "monthly_pass": 0, "monthly_insurance": 0, "monthly_parking": 0, "weekly_fares": 34, "weekly_fuel": 0, "commute_hours_weekly": 4, "reliability_percent": 95, "requires_owned_vehicle": false},
+        {"id": "rail_pass", "name": "Plateau Rail Pass", "description": "Unlimited suburban rail, tram, and civic buses.", "monthly_pass": 122, "monthly_insurance": 0, "monthly_parking": 0, "weekly_fares": 0, "weekly_fuel": 0, "commute_hours_weekly": 4, "reliability_percent": 95, "requires_owned_vehicle": false},
+        {"id": "own_car", "name": "Commute by Car", "description": "Comfortable, but central parking and insurance are expensive.", "monthly_pass": 0, "monthly_insurance": 158, "monthly_parking": 190, "weekly_fares": 0, "weekly_fuel": 37, "commute_hours_weekly": 3, "reliability_percent": 93, "requires_owned_vehicle": true}
+      ]
+    }
+  ]
+}

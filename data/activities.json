@@ -1,0 +1,474 @@
+{
+  "version": 1,
+  "hobbies": [
+    {
+      "id": "urban_sketching",
+      "name": "Urban Sketching",
+      "category": "creative",
+      "description": "Take a pocket sketchbook through the city and draw the people, signs, and corners that catch your eye.",
+      "time_hours": 4,
+      "cash_cost": 12,
+      "weekly_limit": 1,
+      "requirements": {
+        "not_jailed": true,
+        "max_stress": 92
+      },
+      "effects": {
+        "happiness": 5,
+        "stress": -5,
+        "skills": {
+          "creative": 2,
+          "observation": 1
+        }
+      }
+    },
+    {
+      "id": "neighborhood_running",
+      "name": "Neighborhood Run",
+      "category": "wellbeing",
+      "description": "Follow a familiar route through the park and side streets at your own pace.",
+      "time_hours": 3,
+      "cash_cost": 0,
+      "weekly_limit": 2,
+      "requirements": {
+        "not_jailed": true,
+        "min_health": 25
+      },
+      "effects": {
+        "health": 3,
+        "happiness": 2,
+        "stress": -4,
+        "energy": -3,
+        "skills": {
+          "fitness": 2,
+          "discipline": 1
+        }
+      }
+    },
+    {
+      "id": "community_cooking",
+      "name": "Community Cooking Night",
+      "category": "social",
+      "description": "Cook a shared meal at the neighborhood hall and trade recipes with whoever turns up.",
+      "time_hours": 5,
+      "cash_cost": 20,
+      "weekly_limit": 1,
+      "requirements": {
+        "not_jailed": true,
+        "min_reputation": -20
+      },
+      "effects": {
+        "happiness": 5,
+        "stress": -3,
+        "reputation": 1,
+        "skills": {
+          "practical": 2,
+          "people": 1
+        }
+      }
+    },
+    {
+      "id": "bedroom_music",
+      "name": "Make Bedroom Music",
+      "category": "creative",
+      "description": "Build a rough song from homemade rhythms and whatever instrument or app you have nearby.",
+      "time_hours": 5,
+      "cash_cost": 8,
+      "weekly_limit": 1,
+      "requirements": {
+        "not_jailed": true,
+        "housing_required": true
+      },
+      "effects": {
+        "happiness": 6,
+        "stress": -4,
+        "skills": {
+          "creative": 2,
+          "digital": 1
+        }
+      }
+    },
+    {
+      "id": "language_exchange",
+      "name": "Language Exchange",
+      "category": "social",
+      "description": "Meet at the library cafe to practice conversation with learners from across the city.",
+      "time_hours": 4,
+      "cash_cost": 0,
+      "weekly_limit": 1,
+      "requirements": {
+        "not_jailed": true,
+        "min_happiness": 15
+      },
+      "effects": {
+        "happiness": 4,
+        "stress": -2,
+        "reputation": 1,
+        "skills": {
+          "communication": 2,
+          "people": 2
+        }
+      }
+    }
+  ],
+  "gigs": [
+    {
+      "id": "poster_layout",
+      "name": "Neighborhood Poster Layout",
+      "client": "Brightside Community Hall",
+      "description": "Turn a messy event brief into a clear poster. The organizer pays only if the final layout works for print.",
+      "time_hours": 7,
+      "weekly_limit": 1,
+      "pay_min": 135,
+      "pay_max": 220,
+      "base_acceptance": 64,
+      "primary_skill": "digital",
+      "requirements": {
+        "not_jailed": true,
+        "max_stress": 90,
+        "min_reputation": -10,
+        "skills": {
+          "digital": 20
+        }
+      },
+      "submission_effects": {
+        "stress": 2,
+        "skills": {
+          "digital": 2,
+          "creative": 1
+        }
+      },
+      "success_effects": {
+        "happiness": 2,
+        "reputation": 1,
+        "skills": {
+          "business": 1
+        }
+      },
+      "rejection_effects": {
+        "stress": 2,
+        "happiness": -1
+      }
+    },
+    {
+      "id": "furniture_assembly",
+      "name": "Flat-Pack Furniture Assembly",
+      "client": "Neighbor Board",
+      "description": "Assemble shelves and a desk from cryptic instructions. Good work can lead to repeat recommendations.",
+      "time_hours": 9,
+      "weekly_limit": 1,
+      "pay_min": 160,
+      "pay_max": 280,
+      "base_acceptance": 70,
+      "primary_skill": "practical",
+      "requirements": {
+        "not_jailed": true,
+        "min_health": 45,
+        "skills": {
+          "practical": 22
+        }
+      },
+      "submission_effects": {
+        "stress": 2,
+        "energy": -5,
+        "skills": {
+          "practical": 2
+        }
+      },
+      "success_effects": {
+        "happiness": 2,
+        "reputation": 2
+      },
+      "rejection_effects": {
+        "stress": 3,
+        "reputation": -1
+      }
+    },
+    {
+      "id": "local_tutoring",
+      "name": "Exam-Prep Tutoring",
+      "client": "Civic Learners Network",
+      "description": "Prepare a focused study session for a local student. Payment depends on the coordinator's review.",
+      "time_hours": 6,
+      "weekly_limit": 1,
+      "pay_min": 110,
+      "pay_max": 190,
+      "base_acceptance": 74,
+      "primary_skill": "education",
+      "requirements": {
+        "not_jailed": true,
+        "min_reputation": 0,
+        "skills": {
+          "education": 30,
+          "communication": 18
+        }
+      },
+      "submission_effects": {
+        "stress": 1,
+        "skills": {
+          "education": 2,
+          "communication": 1
+        }
+      },
+      "success_effects": {
+        "happiness": 3,
+        "reputation": 2
+      },
+      "rejection_effects": {
+        "stress": 2
+      }
+    },
+    {
+      "id": "audio_cleanup",
+      "name": "Podcast Audio Cleanup",
+      "client": "Lantern Street Stories",
+      "description": "Remove rough cuts and balance a short local podcast episode before its deadline.",
+      "time_hours": 8,
+      "weekly_limit": 1,
+      "pay_min": 150,
+      "pay_max": 250,
+      "base_acceptance": 66,
+      "primary_skill": "digital",
+      "requirements": {
+        "not_jailed": true,
+        "housing_required": true,
+        "skills": {
+          "digital": 28
+        }
+      },
+      "submission_effects": {
+        "stress": 2,
+        "skills": {
+          "digital": 3,
+          "creative": 1
+        }
+      },
+      "success_effects": {
+        "happiness": 2,
+        "reputation": 1
+      },
+      "rejection_effects": {
+        "stress": 3
+      }
+    },
+    {
+      "id": "event_photography",
+      "name": "Pop-Up Event Photography",
+      "client": "Violet Room Collective",
+      "description": "Photograph a crowded one-night showcase and deliver a tight set of edited images.",
+      "time_hours": 10,
+      "weekly_limit": 1,
+      "pay_min": 220,
+      "pay_max": 360,
+      "base_acceptance": 58,
+      "primary_skill": "creative",
+      "requirements": {
+        "not_jailed": true,
+        "min_reputation": 15,
+        "skills": {
+          "digital": 35,
+          "creative": 25
+        }
+      },
+      "submission_effects": {
+        "stress": 3,
+        "energy": -6,
+        "skills": {
+          "digital": 2,
+          "creative": 3
+        }
+      },
+      "success_effects": {
+        "happiness": 4,
+        "reputation": 3
+      },
+      "rejection_effects": {
+        "stress": 4,
+        "happiness": -2
+      }
+    },
+    {
+      "id": "menu_copywriting",
+      "name": "Cafe Menu Copywriting",
+      "client": "Paper Kite Cafe",
+      "description": "Rewrite a cafe's menu so every item sounds inviting without making promises it cannot keep.",
+      "time_hours": 7,
+      "weekly_limit": 1,
+      "pay_min": 140,
+      "pay_max": 260,
+      "base_acceptance": 62,
+      "primary_skill": "communication",
+      "requirements": {
+        "not_jailed": true,
+        "skills": {
+          "creative": 25,
+          "communication": 20
+        }
+      },
+      "submission_effects": {
+        "stress": 2,
+        "skills": {
+          "creative": 2,
+          "communication": 2
+        }
+      },
+      "success_effects": {
+        "happiness": 3,
+        "reputation": 2,
+        "skills": {
+          "business": 1
+        }
+      },
+      "rejection_effects": {
+        "stress": 3
+      }
+    }
+  ],
+  "marketplace_items": [
+    {
+      "id": "hand_poured_candle",
+      "name": "Hand-Poured Candle",
+      "description": "A small-batch soy candle with a hand-lettered label.",
+      "craft_time_hours": 4,
+      "material_cost": 36,
+      "quantity_yield": 2,
+      "weekly_limit": 2,
+      "listing_time_hours": 1,
+      "listing_fee": 4,
+      "listing_duration_weeks": 3,
+      "sale_price_min": 38,
+      "sale_price_max": 58,
+      "base_demand": 70,
+      "requirements": {
+        "not_jailed": true,
+        "housing_required": true,
+        "skills": {
+          "creative": 10,
+          "practical": 10
+        }
+      },
+      "craft_effects": {
+        "happiness": 1,
+        "skills": {
+          "creative": 2,
+          "practical": 1
+        }
+      }
+    },
+    {
+      "id": "restored_lamp",
+      "name": "Restored Desk Lamp",
+      "description": "A cleaned and rewired second-hand lamp finished with a warm painted shade.",
+      "craft_time_hours": 7,
+      "material_cost": 90,
+      "quantity_yield": 1,
+      "weekly_limit": 1,
+      "listing_time_hours": 1,
+      "listing_fee": 6,
+      "listing_duration_weeks": 4,
+      "sale_price_min": 120,
+      "sale_price_max": 210,
+      "base_demand": 53,
+      "requirements": {
+        "not_jailed": true,
+        "housing_required": true,
+        "min_health": 35,
+        "skills": {
+          "practical": 25
+        }
+      },
+      "craft_effects": {
+        "skills": {
+          "practical": 3,
+          "creative": 1
+        }
+      }
+    },
+    {
+      "id": "art_print_set",
+      "name": "City Art Print Set",
+      "description": "Two compact prints based on original street sketches, packaged in recycled card sleeves.",
+      "craft_time_hours": 5,
+      "material_cost": 28,
+      "quantity_yield": 2,
+      "weekly_limit": 2,
+      "listing_time_hours": 1,
+      "listing_fee": 4,
+      "listing_duration_weeks": 3,
+      "sale_price_min": 30,
+      "sale_price_max": 65,
+      "base_demand": 61,
+      "requirements": {
+        "not_jailed": true,
+        "housing_required": true,
+        "skills": {
+          "creative": 25
+        }
+      },
+      "craft_effects": {
+        "happiness": 2,
+        "skills": {
+          "creative": 3,
+          "business": 1
+        }
+      }
+    },
+    {
+      "id": "custom_tote",
+      "name": "Custom Canvas Tote",
+      "description": "A sturdy tote painted to order with an original geometric motif.",
+      "craft_time_hours": 6,
+      "material_cost": 44,
+      "quantity_yield": 2,
+      "weekly_limit": 1,
+      "listing_time_hours": 1,
+      "listing_fee": 5,
+      "listing_duration_weeks": 3,
+      "sale_price_min": 45,
+      "sale_price_max": 75,
+      "base_demand": 65,
+      "requirements": {
+        "not_jailed": true,
+        "housing_required": true,
+        "skills": {
+          "creative": 20,
+          "practical": 15
+        }
+      },
+      "craft_effects": {
+        "skills": {
+          "creative": 2,
+          "practical": 2
+        }
+      }
+    },
+    {
+      "id": "desk_organizer",
+      "name": "Reclaimed-Wood Desk Organizer",
+      "description": "A sanded desktop tray built from small reclaimed timber offcuts.",
+      "craft_time_hours": 5,
+      "material_cost": 32,
+      "quantity_yield": 2,
+      "weekly_limit": 1,
+      "listing_time_hours": 1,
+      "listing_fee": 4,
+      "listing_duration_weeks": 3,
+      "sale_price_min": 38,
+      "sale_price_max": 68,
+      "base_demand": 59,
+      "requirements": {
+        "not_jailed": true,
+        "housing_required": true,
+        "skills": {
+          "practical": 18
+        }
+      },
+      "craft_effects": {
+        "skills": {
+          "practical": 3,
+          "business": 1
+        }
+      }
+    }
+  ]
+}

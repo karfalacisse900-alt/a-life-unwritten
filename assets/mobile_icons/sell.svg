@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs><linearGradient id="sell-coin" x1="12" y1="21" x2="49" y2="53" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF58A"/><stop offset="0.52" stop-color="#FFC83F"/><stop offset="1" stop-color="#EE8E13"/></linearGradient><linearGradient id="sell-arrow" x1="34" y1="7" x2="57" y2="29" gradientUnits="userSpaceOnUse"><stop stop-color="#FF8D70"/><stop offset="1" stop-color="#EF3F68"/></linearGradient></defs>
+  <ellipse cx="25" cy="42" rx="16" ry="7.5" fill="#14294B" opacity="0.18" transform="translate(0 3)"/>
+  <path d="M9 36v12c0 4.1 7.2 7.5 16 7.5s16-3.4 16-7.5V36H9Z" fill="url(#sell-coin)" stroke="#14294B" stroke-width="2.6"/>
+  <ellipse cx="25" cy="36" rx="16" ry="7.5" fill="#FFD956" stroke="#14294B" stroke-width="2.6"/>
+  <path d="M9 42c0 4.1 7.2 7.5 16 7.5S41 46.1 41 42" fill="none" stroke="#B66A0A" stroke-width="2"/>
+  <ellipse cx="25" cy="26.5" rx="14" ry="6.5" fill="url(#sell-coin)" stroke="#14294B" stroke-width="2.5"/>
+  <path d="M11 26.5v9.4M39 26.5v9.4" stroke="#14294B" stroke-width="2.5"/>
+  <path d="M18.5 24.8c4.5-1.8 9-1.7 13.3.1" stroke="#FFF" stroke-width="2.5" stroke-linecap="round" opacity="0.58"/>
+  <path d="M36 8h15.5v15.5" fill="none" stroke="#14294B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M34.5 26 51 9.5" fill="none" stroke="#14294B" stroke-width="7" stroke-linecap="round"/>
+  <path d="M36 8h15.5v15.5M34.5 26 51 9.5" fill="none" stroke="url(#sell-arrow)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

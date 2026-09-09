@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs><linearGradient id="buy-cart" x1="13" y1="16" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#8CF28B"/><stop offset="0.52" stop-color="#39CE71"/><stop offset="1" stop-color="#16A85B"/></linearGradient><linearGradient id="buy-plus" x1="38" y1="8" x2="57" y2="27" gradientUnits="userSpaceOnUse"><stop stop-color="#71E9FF"/><stop offset="1" stop-color="#3481ED"/></linearGradient></defs>
+  <path d="M7 11h7.3l3.6 28.2c.5 3.7 3.6 6.5 7.3 6.5h24.3" fill="none" stroke="#14294B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16.2 18h37l-4.4 19.3a5 5 0 0 1-4.9 3.9H18.7L16.2 18Z" fill="url(#buy-cart)" stroke="#14294B" stroke-width="2.7" stroke-linejoin="round"/>
+  <path d="M21 22.5h20" stroke="#FFF" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+  <path d="M26 22v14M36 22v14M46 22l-2.2 14" stroke="#14824F" stroke-width="1.8" opacity="0.8"/>
+  <circle cx="25" cy="52.2" r="4.5" fill="#FFD95B" stroke="#14294B" stroke-width="2.4"/><circle cx="45" cy="52.2" r="4.5" fill="#FFD95B" stroke="#14294B" stroke-width="2.4"/>
+  <circle cx="48" cy="15" r="10.5" fill="url(#buy-plus)" stroke="#14294B" stroke-width="2.6"/>
+  <path d="M48 9.5v11M42.5 15h11" stroke="#FFF" stroke-width="3.1" stroke-linecap="round"/>
+</svg>

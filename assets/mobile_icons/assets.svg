@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="wallet-body" x1="12" y1="12" x2="53" y2="54" gradientUnits="userSpaceOnUse"><stop stop-color="#6EE7CD"/><stop offset="0.52" stop-color="#28B8C8"/><stop offset="1" stop-color="#1686B9"/></linearGradient>
+    <linearGradient id="wallet-coin" x1="42" y1="17" x2="56" y2="31" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF27C"/><stop offset="1" stop-color="#F5A515"/></linearGradient>
+  </defs>
+  <rect x="8" y="17" width="45" height="37" rx="9" fill="#14294B" opacity="0.16"/>
+  <path d="M10 15.5c0-4 3.3-7.3 7.3-7.3h29.4c3.4 0 6.1 2.7 6.1 6.1v34.2c0 3.7-3 6.7-6.7 6.7H16.7c-3.7 0-6.7-3-6.7-6.7v-33Z" fill="url(#wallet-body)" stroke="#14294B" stroke-width="2.8"/>
+  <path d="M10.5 19.2h34.9c4.1 0 7.4 3.3 7.4 7.4v19.6" fill="none" stroke="#14294B" stroke-width="2.4"/>
+  <path d="M15.5 13.4h27.8" stroke="#FFF" stroke-width="3" stroke-linecap="round" opacity="0.65"/>
+  <path d="M38 27.4h18v14.3H38a7.15 7.15 0 0 1 0-14.3Z" fill="#8C63FF" stroke="#14294B" stroke-width="2.6"/>
+  <circle cx="42.4" cy="34.6" r="2.25" fill="#FFF" stroke="#14294B" stroke-width="1.5"/>
+  <circle cx="49.1" cy="16.8" r="8.8" fill="url(#wallet-coin)" stroke="#14294B" stroke-width="2.4"/>
+  <path d="M49.1 12.3v9M46.9 14.2h3.1a1.7 1.7 0 0 1 0 3.4h-1.8a1.7 1.7 0 0 0 0 3.4h3.1" fill="none" stroke="#8A5704" stroke-width="1.45" stroke-linecap="round"/>
+</svg>

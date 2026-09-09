@@ -1,0 +1,846 @@
+{
+  "version": 2,
+  "currency": "USD",
+  "categories": [
+    {
+      "id": "investment",
+      "name": "Investments",
+      "singular": "Investment",
+      "description": "Fictional funds and city bonds whose prices move every week.",
+      "accent": "#5976E6",
+      "icon": "chart"
+    },
+    {
+      "id": "vehicle",
+      "name": "Vehicles",
+      "singular": "Vehicle",
+      "description": "Transport that unlocks opportunities but brings running costs and wear.",
+      "accent": "#2FA881",
+      "icon": "car"
+    },
+    {
+      "id": "property",
+      "name": "Property",
+      "singular": "Property",
+      "description": "Homes and commercial spaces that build equity and require upkeep.",
+      "accent": "#C88642",
+      "icon": "home"
+    },
+    {
+      "id": "collectible",
+      "name": "Art & Collectibles",
+      "singular": "Collectible",
+      "description": "Personal objects bought for enjoyment, identity, and possible appreciation.",
+      "accent": "#A966B7",
+      "icon": "art"
+    },
+    {
+      "id": "equipment",
+      "name": "Useful Belongings",
+      "singular": "Belonging",
+      "description": "Equipment that opens practical ways to earn and create.",
+      "accent": "#D26363",
+      "icon": "bag"
+    }
+  ],
+  "assets": [
+    {
+      "id": "northstar_index_fund",
+      "name": "Northstar City Index",
+      "category_id": "investment",
+      "kind": "fund",
+      "description": "A fictional broad fund following established companies across the city.",
+      "initial_value": 120,
+      "max_quantity": 100000,
+      "buy_fee_basis_points": 50,
+      "sell_fee_basis_points": 50,
+      "weekly_drift_basis_points": 6,
+      "weekly_volatility_basis_points": 180,
+      "minimum_value_percent": 20,
+      "monthly_upkeep": 0,
+      "monthly_income": 0,
+      "action_hours": 1,
+      "sell_action_hours": 1,
+      "condition_wear_basis_points": 0,
+      "benefits": {
+        "access_tags": [
+          "investor"
+        ]
+      },
+      "requirements": {
+        "min_reputation": -100,
+        "min_cash_after_purchase": 0
+      },
+      "risk_label": "Balanced",
+      "availability": "Open to any adult"
+    },
+    {
+      "id": "renewal_works_fund",
+      "name": "Renewal Works Fund",
+      "category_id": "investment",
+      "kind": "fund",
+      "description": "A volatile fictional fund backing experimental energy and materials firms.",
+      "initial_value": 74,
+      "max_quantity": 100000,
+      "buy_fee_basis_points": 75,
+      "sell_fee_basis_points": 75,
+      "weekly_drift_basis_points": 8,
+      "weekly_volatility_basis_points": 340,
+      "minimum_value_percent": 10,
+      "monthly_upkeep": 0,
+      "monthly_income": 0,
+      "action_hours": 1,
+      "sell_action_hours": 1,
+      "condition_wear_basis_points": 0,
+      "benefits": {
+        "access_tags": [
+          "investor"
+        ]
+      },
+      "requirements": {
+        "min_reputation": -100,
+        "min_cash_after_purchase": 0
+      },
+      "risk_label": "Adventurous",
+      "availability": "Open to any adult"
+    },
+    {
+      "id": "harbor_civic_bond",
+      "name": "Harbor Civic Bond",
+      "category_id": "investment",
+      "kind": "bond",
+      "description": "A steadier fictional city bond paying a small coupon at each monthly boundary.",
+      "initial_value": 500,
+      "max_quantity": 10000,
+      "buy_fee_basis_points": 20,
+      "sell_fee_basis_points": 20,
+      "weekly_drift_basis_points": 2,
+      "weekly_volatility_basis_points": 45,
+      "minimum_value_percent": 75,
+      "monthly_upkeep": 0,
+      "monthly_income": 2,
+      "action_hours": 1,
+      "sell_action_hours": 1,
+      "condition_wear_basis_points": 0,
+      "benefits": {
+        "access_tags": [
+          "investor",
+          "bond_holder"
+        ]
+      },
+      "requirements": {
+        "min_reputation": -100,
+        "min_cash_after_purchase": 0
+      },
+      "risk_label": "Cautious",
+      "availability": "Open to any adult"
+    },
+    {
+      "id": "metro_hatchback",
+      "name": "Metro Hatchback",
+      "category_id": "vehicle",
+      "kind": "car",
+      "description": "A used compact car: inexpensive to run, easy to park, and not glamorous.",
+      "initial_value": 7200,
+      "max_quantity": 1,
+      "buy_fee_basis_points": 250,
+      "sell_fee_basis_points": 500,
+      "weekly_drift_basis_points": -24,
+      "weekly_volatility_basis_points": 50,
+      "minimum_value_percent": 32,
+      "monthly_upkeep": 85,
+      "monthly_income": 0,
+      "action_hours": 3,
+      "sell_action_hours": 2,
+      "condition_wear_basis_points": 22,
+      "condition_value_floor_percent": 58,
+      "maintenance_service_cost": 320,
+      "maintenance_restore": 18,
+      "benefits": {
+        "monthly_happiness": 1,
+        "monthly_stress": -1,
+        "access_tags": [
+          "vehicle",
+          "reliable_transport",
+          "delivery_access"
+        ]
+      },
+      "requirements": {
+        "min_skill": {
+          "driving": 15
+        },
+        "min_cash_after_purchase": 200
+      },
+      "risk_label": "Moderate upkeep",
+      "availability": "Driving 15"
+    },
+    {
+      "id": "courier_van",
+      "name": "Courier Van",
+      "category_id": "vehicle",
+      "kind": "van",
+      "description": "A high-mileage cargo van suited to delivery gigs and market hauling.",
+      "initial_value": 16800,
+      "max_quantity": 1,
+      "buy_fee_basis_points": 250,
+      "sell_fee_basis_points": 500,
+      "weekly_drift_basis_points": -28,
+      "weekly_volatility_basis_points": 65,
+      "minimum_value_percent": 28,
+      "monthly_upkeep": 180,
+      "monthly_income": 0,
+      "action_hours": 3,
+      "sell_action_hours": 2,
+      "condition_wear_basis_points": 28,
+      "condition_value_floor_percent": 52,
+      "maintenance_service_cost": 620,
+      "maintenance_restore": 20,
+      "benefits": {
+        "monthly_stress": -1,
+        "access_tags": [
+          "vehicle",
+          "cargo_vehicle",
+          "delivery_access",
+          "market_stall_access"
+        ]
+      },
+      "requirements": {
+        "min_skill": {
+          "driving": 30
+        },
+        "min_cash_after_purchase": 500
+      },
+      "risk_label": "High utility, high upkeep",
+      "availability": "Driving 30"
+    },
+    {
+      "id": "solace_electric_sedan",
+      "name": "Solace Electric Sedan",
+      "category_id": "vehicle",
+      "kind": "car",
+      "description": "A quiet newer car with lower upkeep and a polished professional image.",
+      "initial_value": 32500,
+      "max_quantity": 1,
+      "buy_fee_basis_points": 250,
+      "sell_fee_basis_points": 450,
+      "weekly_drift_basis_points": -20,
+      "weekly_volatility_basis_points": 55,
+      "minimum_value_percent": 36,
+      "monthly_upkeep": 110,
+      "monthly_income": 0,
+      "action_hours": 3,
+      "sell_action_hours": 2,
+      "condition_wear_basis_points": 16,
+      "condition_value_floor_percent": 62,
+      "maintenance_service_cost": 540,
+      "maintenance_restore": 18,
+      "benefits": {
+        "monthly_happiness": 1,
+        "monthly_reputation": 1,
+        "access_tags": [
+          "vehicle",
+          "reliable_transport",
+          "delivery_access",
+          "professional_vehicle"
+        ]
+      },
+      "requirements": {
+        "min_skill": {
+          "driving": 25
+        },
+        "min_reputation": 30,
+        "min_cash_after_purchase": 800
+      },
+      "risk_label": "Lower upkeep",
+      "availability": "Driving 25 • Reputation 30"
+    },
+    {
+      "id": "riverside_micro_studio",
+      "name": "Riverside Micro-Studio",
+      "category_id": "property",
+      "kind": "home",
+      "description": "A compact deeded studio near the river tram, small but entirely yours.",
+      "initial_value": 48000,
+      "max_quantity": 1,
+      "buy_fee_basis_points": 300,
+      "sell_fee_basis_points": 450,
+      "weekly_drift_basis_points": 5,
+      "weekly_volatility_basis_points": 60,
+      "minimum_value_percent": 60,
+      "monthly_upkeep": 210,
+      "monthly_income": 0,
+      "action_hours": 6,
+      "sell_action_hours": 6,
+      "condition_wear_basis_points": 3,
+      "condition_value_floor_percent": 78,
+      "maintenance_service_cost": 1400,
+      "maintenance_restore": 12,
+      "benefits": {
+        "monthly_happiness": 1,
+        "monthly_stress": -1,
+        "access_tags": [
+          "property_owner",
+          "private_home"
+        ]
+      },
+      "requirements": {
+        "min_reputation": 20,
+        "min_cash_after_purchase": 1500
+      },
+      "risk_label": "Stable, illiquid",
+      "availability": "Reputation 20 • $1,500 reserve"
+    },
+    {
+      "id": "corner_shop_unit",
+      "name": "Corner Shop Unit",
+      "category_id": "property",
+      "kind": "commercial_property",
+      "description": "A narrow commercial unit leased to a neighborhood repair shop.",
+      "initial_value": 132000,
+      "max_quantity": 1,
+      "buy_fee_basis_points": 350,
+      "sell_fee_basis_points": 500,
+      "weekly_drift_basis_points": 4,
+      "weekly_volatility_basis_points": 75,
+      "minimum_value_percent": 52,
+      "monthly_upkeep": 410,
+      "monthly_income": 690,
+      "action_hours": 7,
+      "sell_action_hours": 7,
+      "condition_wear_basis_points": 4,
+      "condition_value_floor_percent": 74,
+      "maintenance_service_cost": 2600,
+      "maintenance_restore": 12,
+      "benefits": {
+        "monthly_reputation": 1,
+        "access_tags": [
+          "property_owner",
+          "commercial_landlord"
+        ]
+      },
+      "requirements": {
+        "min_reputation": 35,
+        "min_skill": {
+          "business": 30
+        },
+        "min_cash_after_purchase": 3500
+      },
+      "risk_label": "Income with vacancy risk",
+      "availability": "Business 30 • Reputation 35"
+    },
+    {
+      "id": "maple_duplex",
+      "name": "Maple Street Duplex",
+      "category_id": "property",
+      "kind": "rental_property",
+      "description": "Two modest apartments with tenants, repairs, and long-term equity.",
+      "initial_value": 245000,
+      "max_quantity": 1,
+      "buy_fee_basis_points": 350,
+      "sell_fee_basis_points": 500,
+      "weekly_drift_basis_points": 5,
+      "weekly_volatility_basis_points": 70,
+      "minimum_value_percent": 58,
+      "monthly_upkeep": 650,
+      "monthly_income": 1450,
+      "action_hours": 8,
+      "sell_action_hours": 8,
+      "condition_wear_basis_points": 5,
+      "condition_value_floor_percent": 72,
+      "maintenance_service_cost": 4200,
+      "maintenance_restore": 14,
+      "benefits": {
+        "monthly_reputation": 1,
+        "access_tags": [
+          "property_owner",
+          "residential_landlord"
+        ]
+      },
+      "requirements": {
+        "min_reputation": 45,
+        "min_skill": {
+          "business": 45
+        },
+        "min_cash_after_purchase": 6000
+      },
+      "risk_label": "Income with major repair risk",
+      "availability": "Business 45 • Reputation 45"
+    },
+    {
+      "id": "mona_lisa_edition",
+      "name": "Mona Lisa",
+      "category_id": "collectible",
+      "kind": "art_edition",
+      "artist": "Leonardo da Vinci",
+      "edition": "Gallery canvas edition",
+      "thumbnail": "res://assets/collection/mona_lisa.jpg",
+      "description": "An archival canvas edition after Leonardo's portrait, presented in a dark wood frame.",
+      "valuation_note": "Virtual collectible edition. Appraisal is simulated and changes weekly; it is not the museum original's sale price.",
+      "initial_value": 850,
+      "max_quantity": 1,
+      "buy_fee_basis_points": 150,
+      "sell_fee_basis_points": 850,
+      "weekly_drift_basis_points": 3,
+      "weekly_volatility_basis_points": 140,
+      "minimum_value_percent": 25,
+      "monthly_upkeep": 2,
+      "monthly_income": 0,
+      "action_hours": 2,
+      "sell_action_hours": 2,
+      "condition_wear_basis_points": 2,
+      "condition_value_floor_percent": 65,
+      "maintenance_service_cost": 51,
+      "maintenance_restore": 20,
+      "benefits": {
+        "monthly_happiness": 1,
+        "access_tags": [
+          "art_owner",
+          "collectors_circle"
+        ]
+      },
+      "requirements": {
+        "min_cash_after_purchase": 26
+      },
+      "risk_label": "Collector edition",
+      "availability": "Game appraisal · resale fees apply"
+    },
+    {
+      "id": "david_study_cast",
+      "name": "David",
+      "category_id": "collectible",
+      "kind": "sculpture",
+      "artist": "Michelangelo",
+      "edition": "Marble study cast · 1:8",
+      "thumbnail": "res://assets/collection/david.jpg",
+      "description": "A hand-finished marble-composite study cast after Michelangelo's David, with a stone plinth.",
+      "valuation_note": "Virtual collectible edition. Appraisal is simulated and changes weekly; it is not the museum original's sale price.",
+      "initial_value": 3600,
+      "max_quantity": 1,
+      "buy_fee_basis_points": 150,
+      "sell_fee_basis_points": 850,
+      "weekly_drift_basis_points": 3,
+      "weekly_volatility_basis_points": 150,
+      "minimum_value_percent": 25,
+      "monthly_upkeep": 7,
+      "monthly_income": 0,
+      "action_hours": 2,
+      "sell_action_hours": 2,
+      "condition_wear_basis_points": 2,
+      "condition_value_floor_percent": 65,
+      "maintenance_service_cost": 216,
+      "maintenance_restore": 20,
+      "benefits": {
+        "monthly_happiness": 1,
+        "access_tags": [
+          "art_owner",
+          "collectors_circle"
+        ]
+      },
+      "requirements": {
+        "min_cash_after_purchase": 108
+      },
+      "risk_label": "Collector edition",
+      "availability": "Game appraisal · resale fees apply"
+    },
+    {
+      "id": "starry_night_edition",
+      "name": "The Starry Night",
+      "category_id": "collectible",
+      "kind": "art_edition",
+      "artist": "Vincent van Gogh",
+      "edition": "Pigment edition · no. 88/250",
+      "thumbnail": "res://assets/collection/starry_night.jpg",
+      "description": "A numbered pigment edition capturing the movement and color of Van Gogh's night sky.",
+      "valuation_note": "Virtual collectible edition. Appraisal is simulated and changes weekly; it is not the museum original's sale price.",
+      "initial_value": 1450,
+      "max_quantity": 1,
+      "buy_fee_basis_points": 150,
+      "sell_fee_basis_points": 850,
+      "weekly_drift_basis_points": 3,
+      "weekly_volatility_basis_points": 180,
+      "minimum_value_percent": 25,
+      "monthly_upkeep": 3,
+      "monthly_income": 0,
+      "action_hours": 2,
+      "sell_action_hours": 2,
+      "condition_wear_basis_points": 2,
+      "condition_value_floor_percent": 65,
+      "maintenance_service_cost": 87,
+      "maintenance_restore": 20,
+      "benefits": {
+        "monthly_happiness": 1,
+        "access_tags": [
+          "art_owner",
+          "collectors_circle"
+        ]
+      },
+      "requirements": {
+        "min_cash_after_purchase": 44
+      },
+      "risk_label": "Collector edition",
+      "availability": "Game appraisal · resale fees apply"
+    },
+    {
+      "id": "pearl_earring_edition",
+      "name": "Girl with a Pearl Earring",
+      "category_id": "collectible",
+      "kind": "art_edition",
+      "artist": "Johannes Vermeer",
+      "edition": "Archival canvas edition",
+      "thumbnail": "res://assets/collection/pearl_earring.jpg",
+      "description": "A framed archival edition of Vermeer's intimate portrait on fine cotton canvas.",
+      "valuation_note": "Virtual collectible edition. Appraisal is simulated and changes weekly; it is not the museum original's sale price.",
+      "initial_value": 1100,
+      "max_quantity": 1,
+      "buy_fee_basis_points": 150,
+      "sell_fee_basis_points": 850,
+      "weekly_drift_basis_points": 3,
+      "weekly_volatility_basis_points": 125,
+      "minimum_value_percent": 25,
+      "monthly_upkeep": 2,
+      "monthly_income": 0,
+      "action_hours": 2,
+      "sell_action_hours": 2,
+      "condition_wear_basis_points": 2,
+      "condition_value_floor_percent": 65,
+      "maintenance_service_cost": 66,
+      "maintenance_restore": 20,
+      "benefits": {
+        "monthly_happiness": 1,
+        "access_tags": [
+          "art_owner",
+          "collectors_circle"
+        ]
+      },
+      "requirements": {
+        "min_cash_after_purchase": 33
+      },
+      "risk_label": "Collector edition",
+      "availability": "Game appraisal · resale fees apply"
+    },
+    {
+      "id": "great_wave_edition",
+      "name": "The Great Wave",
+      "category_id": "collectible",
+      "kind": "art_edition",
+      "artist": "Katsushika Hokusai",
+      "edition": "Woodblock study edition",
+      "thumbnail": "res://assets/collection/great_wave.jpg",
+      "description": "A contemporary woodblock study edition after Hokusai, on handmade Japanese paper.",
+      "valuation_note": "Virtual collectible edition. Appraisal is simulated and changes weekly; it is not the museum original's sale price.",
+      "initial_value": 2100,
+      "max_quantity": 1,
+      "buy_fee_basis_points": 150,
+      "sell_fee_basis_points": 850,
+      "weekly_drift_basis_points": 3,
+      "weekly_volatility_basis_points": 200,
+      "minimum_value_percent": 25,
+      "monthly_upkeep": 4,
+      "monthly_income": 0,
+      "action_hours": 2,
+      "sell_action_hours": 2,
+      "condition_wear_basis_points": 2,
+      "condition_value_floor_percent": 65,
+      "maintenance_service_cost": 126,
+      "maintenance_restore": 20,
+      "benefits": {
+        "monthly_happiness": 1,
+        "access_tags": [
+          "art_owner",
+          "collectors_circle"
+        ]
+      },
+      "requirements": {
+        "min_cash_after_purchase": 63
+      },
+      "risk_label": "Collector edition",
+      "availability": "Game appraisal · resale fees apply"
+    },
+    {
+      "id": "the_kiss_edition",
+      "name": "The Kiss",
+      "category_id": "collectible",
+      "kind": "art_edition",
+      "artist": "Gustav Klimt",
+      "edition": "Gold-leaf studio edition",
+      "thumbnail": "res://assets/collection/the_kiss.jpg",
+      "description": "A richly finished reproduction with hand-applied gold leaf, inspired by Klimt's embrace.",
+      "valuation_note": "Virtual collectible edition. Appraisal is simulated and changes weekly; it is not the museum original's sale price.",
+      "initial_value": 4800,
+      "max_quantity": 1,
+      "buy_fee_basis_points": 150,
+      "sell_fee_basis_points": 850,
+      "weekly_drift_basis_points": 3,
+      "weekly_volatility_basis_points": 190,
+      "minimum_value_percent": 25,
+      "monthly_upkeep": 10,
+      "monthly_income": 0,
+      "action_hours": 2,
+      "sell_action_hours": 2,
+      "condition_wear_basis_points": 2,
+      "condition_value_floor_percent": 65,
+      "maintenance_service_cost": 288,
+      "maintenance_restore": 20,
+      "benefits": {
+        "monthly_happiness": 1,
+        "access_tags": [
+          "art_owner",
+          "collectors_circle"
+        ]
+      },
+      "requirements": {
+        "min_cash_after_purchase": 144
+      },
+      "risk_label": "Collector edition",
+      "availability": "Game appraisal · resale fees apply"
+    },
+    {
+      "id": "mona_lisa_atelier",
+      "name": "Mona Lisa · Atelier",
+      "category_id": "collectible",
+      "kind": "art_edition",
+      "artist": "After Leonardo da Vinci",
+      "edition": "Hand-painted collector edition",
+      "thumbnail": "res://assets/collection/mona_lisa.jpg",
+      "description": "A numbered hand-painted atelier interpretation with custom conservation framing. The museum original remains in its collection.",
+      "valuation_note": "Virtual collectible edition. Appraisal is simulated and changes weekly; it is not the museum original's sale price.",
+      "initial_value": 28500,
+      "max_quantity": 1,
+      "buy_fee_basis_points": 400,
+      "sell_fee_basis_points": 850,
+      "weekly_drift_basis_points": 3,
+      "weekly_volatility_basis_points": 270,
+      "minimum_value_percent": 25,
+      "monthly_upkeep": 29,
+      "monthly_income": 0,
+      "action_hours": 2,
+      "sell_action_hours": 2,
+      "condition_wear_basis_points": 2,
+      "condition_value_floor_percent": 65,
+      "maintenance_service_cost": 1710,
+      "maintenance_restore": 20,
+      "benefits": {
+        "monthly_happiness": 1,
+        "access_tags": [
+          "art_owner",
+          "collectors_circle"
+        ]
+      },
+      "requirements": {
+        "min_cash_after_purchase": 500
+      },
+      "risk_label": "Collector edition",
+      "availability": "Game appraisal · resale fees apply"
+    },
+    {
+      "id": "david_garden_cast",
+      "name": "David · Garden Cast",
+      "category_id": "collectible",
+      "kind": "sculpture",
+      "artist": "After Michelangelo",
+      "edition": "Full-scale garden reproduction",
+      "thumbnail": "res://assets/collection/david.jpg",
+      "description": "A full-scale cast for a private garden, with delivery and installation included in the listing fee.",
+      "valuation_note": "Virtual collectible edition. Appraisal is simulated and changes weekly; it is not the museum original's sale price.",
+      "initial_value": 78000,
+      "max_quantity": 1,
+      "buy_fee_basis_points": 400,
+      "sell_fee_basis_points": 850,
+      "weekly_drift_basis_points": 3,
+      "weekly_volatility_basis_points": 240,
+      "minimum_value_percent": 25,
+      "monthly_upkeep": 78,
+      "monthly_income": 0,
+      "action_hours": 2,
+      "sell_action_hours": 2,
+      "condition_wear_basis_points": 2,
+      "condition_value_floor_percent": 65,
+      "maintenance_service_cost": 4680,
+      "maintenance_restore": 20,
+      "benefits": {
+        "monthly_happiness": 1,
+        "access_tags": [
+          "art_owner",
+          "collectors_circle"
+        ]
+      },
+      "requirements": {
+        "min_cash_after_purchase": 500
+      },
+      "risk_label": "Collector edition",
+      "availability": "Game appraisal · resale fees apply"
+    },
+    {
+      "id": "night_bus_print",
+      "name": "Night Bus No. 4",
+      "category_id": "collectible",
+      "kind": "art_print",
+      "description": "A signed small-run print by local illustrator Ren Ibarra.",
+      "initial_value": 260,
+      "max_quantity": 1,
+      "buy_fee_basis_points": 0,
+      "sell_fee_basis_points": 1000,
+      "weekly_drift_basis_points": 5,
+      "weekly_volatility_basis_points": 90,
+      "minimum_value_percent": 45,
+      "monthly_upkeep": 0,
+      "monthly_income": 0,
+      "action_hours": 2,
+      "sell_action_hours": 2,
+      "condition_wear_basis_points": 2,
+      "condition_value_floor_percent": 70,
+      "maintenance_service_cost": 45,
+      "maintenance_restore": 12,
+      "benefits": {
+        "monthly_happiness": 1,
+        "access_tags": [
+          "art_owner"
+        ]
+      },
+      "requirements": {
+        "min_cash_after_purchase": 50
+      },
+      "risk_label": "Personal value",
+      "availability": "No special requirement"
+    },
+    {
+      "id": "river_glass_sculpture",
+      "name": "River Glass Sculpture",
+      "category_id": "collectible",
+      "kind": "sculpture",
+      "description": "A hand-blown blue glass piece from the East Viaduct studios.",
+      "initial_value": 1800,
+      "max_quantity": 1,
+      "buy_fee_basis_points": 0,
+      "sell_fee_basis_points": 900,
+      "weekly_drift_basis_points": 7,
+      "weekly_volatility_basis_points": 130,
+      "minimum_value_percent": 38,
+      "monthly_upkeep": 8,
+      "monthly_income": 0,
+      "action_hours": 2,
+      "sell_action_hours": 3,
+      "condition_wear_basis_points": 2,
+      "condition_value_floor_percent": 66,
+      "maintenance_service_cost": 170,
+      "maintenance_restore": 14,
+      "benefits": {
+        "monthly_happiness": 1,
+        "monthly_reputation": 1,
+        "access_tags": [
+          "art_owner",
+          "collectors_circle"
+        ]
+      },
+      "requirements": {
+        "min_reputation": 20,
+        "min_cash_after_purchase": 200
+      },
+      "risk_label": "Specialist resale",
+      "availability": "Reputation 20"
+    },
+    {
+      "id": "after_rain_canvas",
+      "name": "After Rain, 6:10",
+      "category_id": "collectible",
+      "kind": "painting",
+      "description": "An original cityscape painting with a growing but uncertain following.",
+      "initial_value": 5800,
+      "max_quantity": 1,
+      "buy_fee_basis_points": 0,
+      "sell_fee_basis_points": 850,
+      "weekly_drift_basis_points": 9,
+      "weekly_volatility_basis_points": 180,
+      "minimum_value_percent": 30,
+      "monthly_upkeep": 15,
+      "monthly_income": 0,
+      "action_hours": 3,
+      "sell_action_hours": 3,
+      "condition_wear_basis_points": 2,
+      "condition_value_floor_percent": 65,
+      "maintenance_service_cost": 420,
+      "maintenance_restore": 15,
+      "benefits": {
+        "monthly_happiness": 1,
+        "monthly_reputation": 1,
+        "access_tags": [
+          "art_owner",
+          "collectors_circle"
+        ]
+      },
+      "requirements": {
+        "min_reputation": 30,
+        "min_cash_after_purchase": 500
+      },
+      "risk_label": "Speculative collectible",
+      "availability": "Reputation 30"
+    },
+    {
+      "id": "creator_laptop",
+      "name": "Creator Laptop",
+      "category_id": "equipment",
+      "kind": "work_equipment",
+      "description": "A capable refurbished laptop for design, editing, and remote freelance work.",
+      "initial_value": 1600,
+      "max_quantity": 1,
+      "buy_fee_basis_points": 0,
+      "sell_fee_basis_points": 1200,
+      "weekly_drift_basis_points": -30,
+      "weekly_volatility_basis_points": 30,
+      "minimum_value_percent": 18,
+      "monthly_upkeep": 20,
+      "monthly_income": 0,
+      "action_hours": 2,
+      "sell_action_hours": 2,
+      "condition_wear_basis_points": 18,
+      "condition_value_floor_percent": 48,
+      "maintenance_service_cost": 190,
+      "maintenance_restore": 20,
+      "benefits": {
+        "access_tags": [
+          "computer",
+          "freelance_equipment",
+          "digital_market_access"
+        ]
+      },
+      "requirements": {
+        "min_cash_after_purchase": 100
+      },
+      "risk_label": "Useful equipment",
+      "availability": "No special requirement"
+    },
+    {
+      "id": "market_stall_kit",
+      "name": "Fold-Out Market Stall",
+      "category_id": "equipment",
+      "kind": "sales_equipment",
+      "description": "A weatherproof table, canopy, display racks, and lockable cash case.",
+      "initial_value": 850,
+      "max_quantity": 1,
+      "buy_fee_basis_points": 0,
+      "sell_fee_basis_points": 1200,
+      "weekly_drift_basis_points": -18,
+      "weekly_volatility_basis_points": 25,
+      "minimum_value_percent": 25,
+      "monthly_upkeep": 12,
+      "monthly_income": 0,
+      "action_hours": 2,
+      "sell_action_hours": 2,
+      "condition_wear_basis_points": 12,
+      "condition_value_floor_percent": 55,
+      "maintenance_service_cost": 95,
+      "maintenance_restore": 22,
+      "benefits": {
+        "access_tags": [
+          "market_stall_access",
+          "physical_market_access"
+        ]
+      },
+      "requirements": {
+        "min_cash_after_purchase": 75
+      },
+      "risk_label": "Useful equipment",
+      "availability": "No special requirement"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+; Engine configuration file.
+config_version=5
+
+[application]
+config/name="A Life Unwritten — Mobile Life Sim"
+run/main_scene="res://main.tscn"
+
+[display]
+window/size/viewport_width=540
+window/size/viewport_height=960
+window/size/window_width_override=450
+window/size/window_height_override=800
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+window/handheld/orientation=1
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="mobile"

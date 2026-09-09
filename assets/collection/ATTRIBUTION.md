@@ -1,0 +1,12 @@
+# Collection image credits
+
+These images are real historical works, not AI-generated artwork. In-game purchases are virtual collectible editions after the works, not transfers of museum originals. Appraisals, prices, ownership and market movements are invented for this simulation. No current sale price is asserted for the Mona Lisa or David.
+
+- `mona_lisa.jpg`: Leonardo da Vinci, *Mona Lisa*, 1503–1519. Faithful public-domain reproduction, C2RMF via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF.jpg), PD-Art / Public Domain Mark. Downloaded as 330px thumbnail.
+- `starry_night.jpg`: Vincent van Gogh, *The Starry Night*, 1889, Museum of Modern Art. Google Art Project via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg), faithful public-domain reproduction / Public Domain Mark. Downloaded as 330px thumbnail.
+- `pearl_earring.jpg`: Johannes Vermeer, *Girl with a Pearl Earring*, c. 1665, Mauritshuis. [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:1665_Girl_with_a_Pearl_Earring.jpg), faithful public-domain reproduction / Public Domain Mark. Downloaded as 250px thumbnail.
+- `david.jpg`: Giorgio Sommer (photographer), Michelangelo (sculptor), *Italien, Florenz, Piazza della Signoria, David*, c. 1870–1880, Wien Museum, inventory 157198/49. [Wien Museum source](https://sammlung.wienmuseum.at/en/object/978862-italien-florenz-piazza-della-signoria-david/), CC0. The original scan is retained unmodified; the card view crops to the photographic area, excluding the mounting board and scanning color chart.
+- `great_wave.jpg`: Katsushika Hokusai, *The Great Wave off Kanagawa*, c. 1830–1832. Metropolitan Museum of Art reproduction via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Tsunami_by_hokusai_19th_century.jpg), PD-Art / Public Domain Mark.
+- `the_kiss.jpg`: Gustav Klimt, *The Kiss*, 1907–1908, Belvedere. Google Cultural Institute via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg), PD-Art / Public Domain Mark.
+
+Vehicle, property and equipment illustrations are original code-drawn illustrations in `scripts/ui/AssetIllustrations.gd`. Vehicle names are descriptive references; no manufacturer artwork or endorsement is included. Vehicle prices and operating costs are game assumptions.

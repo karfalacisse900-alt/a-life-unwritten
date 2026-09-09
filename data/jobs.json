@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "warehouse_worker",
+      "title": "Warehouse Worker",
+      "district_id": "industrial",
+      "district": "Industrial",
+      "location_id": "freight_warehouse",
+      "description": "Sort freight and prepare local deliveries. Reliable attendance matters more than formal education.",
+      "weekly_pay": 560,
+      "schedule_hours": 38,
+      "application_hours": 3,
+      "requirements_text": "Health 40; record policy",
+      "requirements": {
+        "min_health": 40,
+        "min_reputation": -20,
+        "max_convictions": 2,
+        "skills": {}
+      },
+      "preferred_skills": {
+        "fitness": 20,
+        "practical": 15
+      },
+      "performance_skill": "practical",
+      "promotion": {
+        "id": "warehouse_team_lead",
+        "title": "Warehouse Team Lead",
+        "weekly_pay": 720,
+        "min_weeks": 16,
+        "min_performance": 74,
+        "skill_requirements": {
+          "practical": 30
+        }
+      }
+    },
+    {
+      "id": "retail_assistant",
+      "title": "Retail Assistant",
+      "district_id": "commercial",
+      "district": "Commercial",
+      "location_id": "corner_retail",
+      "description": "Help customers, stock shelves, and keep the neighborhood shop running smoothly.",
+      "weekly_pay": 480,
+      "schedule_hours": 32,
+      "application_hours": 3,
+      "requirements_text": "Communication 8",
+      "requirements": {
+        "min_health": 30,
+        "min_reputation": -10,
+        "max_convictions": 1,
+        "skills": {
+          "communication": 8
+        }
+      },
+      "preferred_skills": {
+        "communication": 25,
+        "practical": 10
+      },
+      "performance_skill": "communication",
+      "promotion": {
+        "id": "retail_shift_lead",
+        "title": "Retail Shift Lead",
+        "weekly_pay": 610,
+        "min_weeks": 14,
+        "min_performance": 72,
+        "skill_requirements": {
+          "communication": 28
+        }
+      }
+    },
+    {
+      "id": "delivery_worker",
+      "title": "Delivery Worker",
+      "district_id": "industrial",
+      "district": "Industrial",
+      "location_id": "delivery_depot",
+      "description": "Move parcels across the city on a fixed route. Strong driving skill improves the interview.",
+      "weekly_pay": 620,
+      "schedule_hours": 40,
+      "application_hours": 3,
+      "requirements_text": "Driving 12",
+      "requirements": {
+        "min_health": 40,
+        "min_reputation": -10,
+        "max_convictions": 1,
+        "skills": {
+          "driving": 12
+        }
+      },
+      "preferred_skills": {
+        "driving": 30,
+        "practical": 20
+      },
+      "performance_skill": "driving",
+      "promotion": {
+        "id": "route_coordinator",
+        "title": "Route Coordinator",
+        "weekly_pay": 790,
+        "min_weeks": 18,
+        "min_performance": 76,
+        "skill_requirements": {
+          "driving": 35,
+          "practical": 25
+        }
+      }
+    },
+    {
+      "id": "security_guard",
+      "title": "Security Guard",
+      "district_id": "downtown",
+      "district": "Downtown",
+      "location_id": "corporate_offices",
+      "description": "Monitor an office building and respond calmly to incidents. A workplace certificate is required.",
+      "weekly_pay": 600,
+      "schedule_hours": 36,
+      "application_hours": 3,
+      "requirements_text": "Workplace Readiness Certificate; clean record",
+      "requirements": {
+        "min_health": 45,
+        "min_reputation": 0,
+        "max_convictions": 0,
+        "education": [
+          "workplace_readiness_certificate"
+        ],
+        "skills": {}
+      },
+      "preferred_skills": {
+        "fitness": 25,
+        "discipline": 25
+      },
+      "performance_skill": "discipline",
+      "promotion": {
+        "id": "security_supervisor",
+        "title": "Security Supervisor",
+        "weekly_pay": 780,
+        "min_weeks": 18,
+        "min_performance": 78,
+        "skill_requirements": {
+          "discipline": 35
+        }
+      }
+    },
+    {
+      "id": "office_assistant",
+      "title": "Office Assistant",
+      "district_id": "downtown",
+      "district": "Downtown",
+      "location_id": "corporate_offices",
+      "description": "Coordinate appointments, records, and reception for a growing local firm.",
+      "weekly_pay": 650,
+      "schedule_hours": 35,
+      "application_hours": 3,
+      "requirements_text": "Administration 14; clean record",
+      "requirements": {
+        "min_health": 25,
+        "min_reputation": 0,
+        "max_convictions": 0,
+        "skills": {
+          "administration": 14
+        }
+      },
+      "preferred_skills": {
+        "administration": 32,
+        "communication": 22
+      },
+      "performance_skill": "administration",
+      "promotion": {
+        "id": "office_coordinator",
+        "title": "Office Coordinator",
+        "weekly_pay": 840,
+        "min_weeks": 16,
+        "min_performance": 76,
+        "skill_requirements": {
+          "administration": 36,
+          "communication": 25
+        }
+      }
+    }
+  ]
+}

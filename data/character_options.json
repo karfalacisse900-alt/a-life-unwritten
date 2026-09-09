@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "backgrounds": [
+    {
+      "id": "family_couch",
+      "name": "Family Couch",
+      "description": "Low costs and support, but little privacy.",
+      "cash": 650,
+      "savings": 200,
+      "debt": 0,
+      "health": 74,
+      "happiness": 64,
+      "stress": 18,
+      "reputation": 48,
+      "skill_bonus": {"communication": 4}
+    },
+    {
+      "id": "fresh_start",
+      "name": "Fresh Start",
+      "description": "More cash, no local safety net, and higher stress.",
+      "cash": 1450,
+      "savings": 0,
+      "debt": 350,
+      "health": 70,
+      "happiness": 58,
+      "stress": 30,
+      "reputation": 40,
+      "skill_bonus": {"grit": 6}
+    },
+    {
+      "id": "trade_family",
+      "name": "Trade Family",
+      "description": "Practical skills and a small loan to repay.",
+      "cash": 850,
+      "savings": 150,
+      "debt": 800,
+      "health": 78,
+      "happiness": 61,
+      "stress": 23,
+      "reputation": 52,
+      "skill_bonus": {"practical": 10}
+    },
+    {
+      "id": "honor_student",
+      "name": "Honor Student",
+      "description": "Strong study habits, modest debt, fewer contacts.",
+      "cash": 500,
+      "savings": 300,
+      "debt": 600,
+      "health": 68,
+      "happiness": 57,
+      "stress": 27,
+      "reputation": 55,
+      "skill_bonus": {"administration": 10}
+    }
+  ],
+  "traits": [
+    {"id": "focused", "name": "Focused", "description": "+study progress, +stress from setbacks"},
+    {"id": "charming", "name": "Charming", "description": "+relationships, occasional distraction"},
+    {"id": "resilient", "name": "Resilient", "description": "+recovery, slower networking"},
+    {"id": "bold", "name": "Bold", "description": "+opportunities, +risk"}
+  ]
+}

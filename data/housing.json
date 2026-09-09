@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "housing": [
+    {
+      "id": "family_home",
+      "name": "Family Home",
+      "district_id": "residential",
+      "location_id": "neighborhood_housing",
+      "description": "Stay in the spare room. It is financially safe, but privacy is limited.",
+      "deposit": 0,
+      "moving_cost": 0,
+      "monthly_rent": 0,
+      "monthly_utilities": 80,
+      "deposit_refund_percent": 100,
+      "requirements": {
+        "min_weekly_income": 0,
+        "min_cash_after_move": 0
+      },
+      "wellbeing": {
+        "happiness": -1,
+        "stress": -1,
+        "health": 0
+      },
+      "mining": {
+        "allowed": false,
+        "max_rigs": 0,
+        "reason": "The household will not allow mining equipment."
+      },
+      "tradeoff": "Lowest cost; limited privacy and no mining space.",
+      "benefit": "Lowest cost • Supportive household • No mining space"
+    },
+    {
+      "id": "rented_room",
+      "name": "Rented Room",
+      "district_id": "residential",
+      "location_id": "neighborhood_housing",
+      "description": "A lockable room in a shared townhouse with predictable bills.",
+      "deposit": 500,
+      "moving_cost": 100,
+      "monthly_rent": 620,
+      "monthly_utilities": 110,
+      "deposit_refund_percent": 100,
+      "requirements": {
+        "min_weekly_income": 0,
+        "min_cash_after_move": 50
+      },
+      "wellbeing": {
+        "happiness": 1,
+        "stress": 0,
+        "health": 0
+      },
+      "mining": {
+        "allowed": true,
+        "max_rigs": 1,
+        "reason": "The circuit can safely support one compact rig."
+      },
+      "tradeoff": "Affordable independence; shared facilities and space for one compact rig.",
+      "benefit": "More independence • One compact mining rig allowed"
+    },
+    {
+      "id": "city_apartment",
+      "name": "City Apartment",
+      "district_id": "downtown",
+      "location_id": "premium_apartments",
+      "description": "A private one-bedroom near work, nightlife, and transit.",
+      "deposit": 1400,
+      "moving_cost": 250,
+      "monthly_rent": 1400,
+      "monthly_utilities": 190,
+      "deposit_refund_percent": 100,
+      "requirements": {
+        "min_weekly_income": 600,
+        "min_cash_after_move": 500
+      },
+      "wellbeing": {
+        "happiness": 2,
+        "stress": -1,
+        "health": 1
+      },
+      "mining": {
+        "allowed": true,
+        "max_rigs": 2,
+        "reason": "Dedicated power and ventilation support two compact rigs."
+      },
+      "tradeoff": "Best privacy and wellbeing; high monthly cost and deposit.",
+      "benefit": "Private space • Better wellbeing • Two compact rigs allowed"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "currency": "USD",
+  "disclaimer": "Named coins and fictional securities use game prices and invented news. Quotes are simulated, not live valuations. No real trading or wallets.",
+  "settings": {
+    "history_weeks": 156,
+    "orders_per_week": 8,
+    "equity_fee_basis_points": 12,
+    "equity_minimum_fee_cents": 99,
+    "crypto_fee_basis_points": 35,
+    "crypto_minimum_fee_cents": 25,
+    "bond_fee_basis_points": 8,
+    "bond_minimum_fee_cents": 50
+  },
+  "asset_classes": [
+    {"id": "stock", "name": "Stocks", "description": "Shares in fictional public companies. Prices respond to the economy, their sector, and company news."},
+    {"id": "crypto", "name": "Digital Assets", "description": "Bitcoin, Solana, and other coins at simulated game prices. Buy fractional amounts; no real wallets or exchanges."},
+    {"id": "etf", "name": "Funds", "description": "Diversified fictional exchange-traded funds with lower company-specific risk."},
+    {"id": "bond", "name": "Bonds", "description": "Fictional government notes with steadier prices and scheduled interest distributions."}
+  ],
+  "instruments": [
+    {
+      "id": "bitcoin", "symbol": "BTC", "name": "Bitcoin", "asset_class": "crypto", "sector": "Digital currency",
+      "description": "A collectible in-game Bitcoin holding. This simulation has its own price history; it does not follow the live Bitcoin market.",
+      "initial_price_cents": 6800000, "unit_scale": 100000000, "drift_basis_points": 15, "volatility_basis_points": 1100, "market_beta_basis_points": 14000,
+      "minimum_price_cents": 10000, "annual_yield_basis_points": 0, "distribution_interval_weeks": 0, "risk": "High", "accent": "#F7931A"
+    },
+    {
+      "id": "solana", "symbol": "SOL", "name": "Solana", "asset_class": "crypto", "sector": "Smart contracts",
+      "description": "Solana represented as a game asset with independent simulated prices, fractional orders, and no network connection.",
+      "initial_price_cents": 14500, "unit_scale": 1000000, "drift_basis_points": 18, "volatility_basis_points": 1950, "market_beta_basis_points": 17500,
+      "minimum_price_cents": 10, "annual_yield_basis_points": 0, "distribution_interval_weeks": 0, "risk": "Very high", "accent": "#8067CC"
+    },
+    {
+      "id": "ethereum", "symbol": "ETH", "name": "Ethereum", "asset_class": "crypto", "sector": "Smart contracts",
+      "description": "An in-game Ethereum holding with fictional weekly market movement. Supports eight decimal places.",
+      "initial_price_cents": 325000, "unit_scale": 100000000, "drift_basis_points": 17, "volatility_basis_points": 1500, "market_beta_basis_points": 15800,
+      "minimum_price_cents": 100, "annual_yield_basis_points": 0, "distribution_interval_weeks": 0, "risk": "Very high", "accent": "#627EEA"
+    },
+    {
+      "id": "dogecoin", "symbol": "DOGE", "name": "Dogecoin", "asset_class": "crypto", "sector": "Community currency",
+      "description": "A speculative game asset named after Dogecoin. Prices and news are simulated inside your save.",
+      "initial_price_cents": 18, "unit_scale": 1000000, "drift_basis_points": 5, "volatility_basis_points": 2600, "market_beta_basis_points": 19000,
+      "minimum_price_cents": 1, "annual_yield_basis_points": 0, "distribution_interval_weeks": 0, "risk": "Extreme", "accent": "#C2A633"
+    },
+    {
+      "id": "meridian_cloudworks", "symbol": "MCW", "name": "Meridian Cloudworks", "asset_class": "stock", "sector": "Technology",
+      "description": "Business software, secure data centers, and cloud infrastructure for mid-sized firms.",
+      "initial_price_cents": 8640, "unit_scale": 1, "drift_basis_points": 18, "volatility_basis_points": 620, "market_beta_basis_points": 12500,
+      "minimum_price_cents": 250, "annual_yield_basis_points": 40, "distribution_interval_weeks": 13, "risk": "High", "accent": "#456B88"
+    },
+    {
+      "id": "aurum_health_systems", "symbol": "AHS", "name": "Aurum Health Systems", "asset_class": "stock", "sector": "Healthcare",
+      "description": "Regional clinics, diagnostic laboratories, and patient scheduling technology.",
+      "initial_price_cents": 4725, "unit_scale": 1, "drift_basis_points": 12, "volatility_basis_points": 390, "market_beta_basis_points": 8200,
+      "minimum_price_cents": 250, "annual_yield_basis_points": 165, "distribution_interval_weeks": 13, "risk": "Medium", "accent": "#4E8962"
+    },
+    {
+      "id": "calder_mobility", "symbol": "CLDM", "name": "Calder Mobility", "asset_class": "stock", "sector": "Transportation",
+      "description": "Electric buses, fleet maintenance, and commuter mobility services.",
+      "initial_price_cents": 3180, "unit_scale": 1, "drift_basis_points": 9, "volatility_basis_points": 510, "market_beta_basis_points": 11500,
+      "minimum_price_cents": 175, "annual_yield_basis_points": 95, "distribution_interval_weeks": 13, "risk": "Medium-high", "accent": "#BD7448"
+    },
+    {
+      "id": "harborline_foods", "symbol": "HLF", "name": "Harborline Foods", "asset_class": "stock", "sector": "Consumer staples",
+      "description": "A grocery distributor and producer of affordable pantry foods.",
+      "initial_price_cents": 5695, "unit_scale": 1, "drift_basis_points": 7, "volatility_basis_points": 260, "market_beta_basis_points": 5800,
+      "minimum_price_cents": 300, "annual_yield_basis_points": 285, "distribution_interval_weeks": 13, "risk": "Lower", "accent": "#C6994D"
+    },
+    {
+      "id": "stonebridge_materials", "symbol": "SBM", "name": "Stonebridge Materials", "asset_class": "stock", "sector": "Industrials",
+      "description": "Recycled construction materials, cement products, and municipal supply contracts.",
+      "initial_price_cents": 4035, "unit_scale": 1, "drift_basis_points": 10, "volatility_basis_points": 470, "market_beta_basis_points": 10800,
+      "minimum_price_cents": 225, "annual_yield_basis_points": 210, "distribution_interval_weeks": 13, "risk": "Medium", "accent": "#747D78"
+    },
+    {
+      "id": "hearthlight_utilities", "symbol": "HLU", "name": "Hearthlight Utilities", "asset_class": "stock", "sector": "Utilities",
+      "description": "Regulated electric and water networks serving three fictional metro regions.",
+      "initial_price_cents": 6220, "unit_scale": 1, "drift_basis_points": 5, "volatility_basis_points": 190, "market_beta_basis_points": 4200,
+      "minimum_price_cents": 500, "annual_yield_basis_points": 410, "distribution_interval_weeks": 13, "risk": "Lower", "accent": "#3F806E"
+    },
+    {
+      "id": "vela_media_group", "symbol": "VMG", "name": "Vela Media Group", "asset_class": "stock", "sector": "Communication",
+      "description": "Local streaming, podcasts, live events, and independent production studios.",
+      "initial_price_cents": 2275, "unit_scale": 1, "drift_basis_points": 8, "volatility_basis_points": 580, "market_beta_basis_points": 13200,
+      "minimum_price_cents": 100, "annual_yield_basis_points": 0, "distribution_interval_weeks": 13, "risk": "High", "accent": "#796881"
+    },
+    {
+      "id": "juniper_financial", "symbol": "JPF", "name": "Juniper Financial", "asset_class": "stock", "sector": "Financial services",
+      "description": "Consumer banking, small-business lending, and insurance brokerage.",
+      "initial_price_cents": 5110, "unit_scale": 1, "drift_basis_points": 8, "volatility_basis_points": 440, "market_beta_basis_points": 10400,
+      "minimum_price_cents": 250, "annual_yield_basis_points": 250, "distribution_interval_weeks": 13, "risk": "Medium", "accent": "#B85C64"
+    },
+
+    {
+      "id": "ember_ledger", "symbol": "EMB", "name": "Ember Ledger", "asset_class": "crypto", "sector": "Digital network",
+      "description": "A fictional utility token for settling tiny transactions inside a cooperative digital network.",
+      "initial_price_cents": 1845, "unit_scale": 1000, "drift_basis_points": 22, "volatility_basis_points": 1550, "market_beta_basis_points": 16500,
+      "minimum_price_cents": 1, "annual_yield_basis_points": 0, "distribution_interval_weeks": 0, "risk": "Very high", "accent": "#D46A44"
+    },
+    {
+      "id": "tidebyte", "symbol": "TDB", "name": "Tidebyte", "asset_class": "crypto", "sector": "Digital storage",
+      "description": "A fictional coin used by a decentralized archive and storage marketplace.",
+      "initial_price_cents": 428, "unit_scale": 1000, "drift_basis_points": 16, "volatility_basis_points": 2050, "market_beta_basis_points": 18200,
+      "minimum_price_cents": 1, "annual_yield_basis_points": 0, "distribution_interval_weeks": 0, "risk": "Very high", "accent": "#467F9B"
+    },
+    {
+      "id": "kestrel_protocol", "symbol": "KRL", "name": "Kestrel Protocol", "asset_class": "crypto", "sector": "Creator payments",
+      "description": "A fictional digital asset for licensing art and compensating creators.",
+      "initial_price_cents": 7630, "unit_scale": 1000, "drift_basis_points": 12, "volatility_basis_points": 1780, "market_beta_basis_points": 17100,
+      "minimum_price_cents": 1, "annual_yield_basis_points": 0, "distribution_interval_weeks": 0, "risk": "Very high", "accent": "#8B678D"
+    },
+    {
+      "id": "orbit_ledger", "symbol": "OBL", "name": "Orbit Ledger", "asset_class": "crypto", "sector": "Digital identity",
+      "description": "A fictional token for verifying credentials in a privacy-focused identity network.",
+      "initial_price_cents": 92, "unit_scale": 1000, "drift_basis_points": 10, "volatility_basis_points": 2450, "market_beta_basis_points": 19000,
+      "minimum_price_cents": 1, "annual_yield_basis_points": 0, "distribution_interval_weeks": 0, "risk": "Extreme", "accent": "#5976A6"
+    },
+
+    {
+      "id": "broadward_100_fund", "symbol": "BWT", "name": "Broadward 100 Fund", "asset_class": "etf", "sector": "Broad market",
+      "description": "A fictional fund spreading each share across one hundred established domestic companies.",
+      "initial_price_cents": 12840, "unit_scale": 1, "drift_basis_points": 9, "volatility_basis_points": 220, "market_beta_basis_points": 9500,
+      "minimum_price_cents": 1500, "annual_yield_basis_points": 185, "distribution_interval_weeks": 13, "risk": "Balanced", "accent": "#456B88"
+    },
+    {
+      "id": "greenline_income_fund", "symbol": "GLI", "name": "Greenline Income Fund", "asset_class": "etf", "sector": "Dividend companies",
+      "description": "A fictional diversified fund focused on mature companies with steady distributions.",
+      "initial_price_cents": 7460, "unit_scale": 1, "drift_basis_points": 6, "volatility_basis_points": 145, "market_beta_basis_points": 6500,
+      "minimum_price_cents": 1000, "annual_yield_basis_points": 365, "distribution_interval_weeks": 13, "risk": "Lower", "accent": "#4E8962"
+    },
+    {
+      "id": "northport_treasury_note", "symbol": "NTN", "name": "Northport Treasury Note", "asset_class": "bond", "sector": "Government debt",
+      "description": "A fictional short-duration public note designed for capital preservation and predictable interest.",
+      "initial_price_cents": 10000, "unit_scale": 1, "drift_basis_points": 1, "volatility_basis_points": 42, "market_beta_basis_points": -1200,
+      "minimum_price_cents": 8500, "annual_yield_basis_points": 425, "distribution_interval_weeks": 4, "risk": "Conservative", "accent": "#C6994D"
+    }
+  ],
+  "macro_headlines": {
+    "positive": [
+      "Hiring and consumer spending improved across the simulated economy.",
+      "Business confidence rose after a stronger fictional services report.",
+      "Credit conditions eased, lifting risk appetite across local markets."
+    ],
+    "neutral": [
+      "Markets digested a mixed week of fictional economic data.",
+      "Investors balanced stable employment against cautious company guidance.",
+      "Trading was orderly as investors waited for next week's economic reports."
+    ],
+    "negative": [
+      "A weaker fictional growth report pushed investors toward safer assets.",
+      "Unexpected cost pressures weighed on companies across several sectors.",
+      "Credit worries reduced risk appetite across the simulated economy."
+    ]
+  }
+}

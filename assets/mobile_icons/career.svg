@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="case-body" x1="8" y1="18" x2="54" y2="55" gradientUnits="userSpaceOnUse"><stop stop-color="#FFB447"/><stop offset="0.54" stop-color="#F47A31"/><stop offset="1" stop-color="#E24B3F"/></linearGradient>
+    <linearGradient id="case-band" x1="9" y1="27" x2="55" y2="42" gradientUnits="userSpaceOnUse"><stop stop-color="#FFCF5A"/><stop offset="1" stop-color="#FF8D35"/></linearGradient>
+  </defs>
+  <path d="M19 19v-4.6c0-4 3.2-7.2 7.2-7.2h11.6c4 0 7.2 3.2 7.2 7.2V19" fill="none" stroke="#14294B" stroke-width="3.2"/>
+  <path d="M24.4 18.5v-3.1c0-1.2 1-2.2 2.2-2.2h10.8c1.2 0 2.2 1 2.2 2.2v3.1" fill="none" stroke="#FFB63F" stroke-width="3"/>
+  <rect x="7" y="18" width="50" height="38" rx="8" fill="#14294B" opacity="0.16" transform="translate(0 2)"/>
+  <rect x="7" y="17" width="50" height="38" rx="8" fill="url(#case-body)" stroke="#14294B" stroke-width="2.8"/>
+  <path d="M8.4 28.7c6.6 5.7 14.5 8.5 23.6 8.5s17-2.8 23.6-8.5v12.5H8.4V28.7Z" fill="url(#case-band)" stroke="#14294B" stroke-width="2.2"/>
+  <rect x="27.3" y="33.2" width="9.4" height="8.2" rx="2.2" fill="#FFF3BD" stroke="#14294B" stroke-width="2.1"/>
+  <path d="M14 22.8h25" stroke="#FFF" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+</svg>

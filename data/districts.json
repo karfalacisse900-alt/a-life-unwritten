@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "districts": [
+    {
+      "id": "downtown",
+      "name": "Downtown",
+      "tagline": "Careers, finance, and expensive convenience",
+      "description": "Careers, finance, and expensive convenience",
+      "accent": "#6257D9",
+      "locations": [
+        {
+          "id": "central_bank",
+          "name": "Central Bank",
+          "description": "Move money between cash and savings and review debt.",
+          "status": "available",
+          "actions": ["banking"]
+        },
+        {
+          "id": "corporate_offices",
+          "name": "Corporate Offices",
+          "description": "Apply for office and building-security work.",
+          "status": "available",
+          "actions": ["browse_jobs"],
+          "job_ids": ["security_guard", "office_assistant"]
+        },
+        {
+          "id": "crypto_office",
+          "name": "Civic Exchange",
+          "description": "Trade regulated fictional stocks, funds, bonds, and digital assets.",
+          "status": "available",
+          "actions": ["crypto_market"]
+        },
+        {
+          "id": "premium_apartments",
+          "name": "Skyline Apartments",
+          "description": "Inspect the private city apartment and its lease terms.",
+          "status": "available",
+          "actions": ["browse_housing"],
+          "housing_ids": ["city_apartment"]
+        },
+        {
+          "id": "downtown_restaurants",
+          "name": "Restaurant Row",
+          "description": "Spend time with someone over an affordable meal.",
+          "status": "available",
+          "actions": ["relationship_outing"]
+        }
+      ]
+    },
+    {
+      "id": "commercial",
+      "name": "Commercial",
+      "tagline": "Shops, services, and small ventures",
+      "description": "Shops, services, and small ventures",
+      "accent": "#EC7A5C",
+      "locations": [
+        {
+          "id": "corner_retail",
+          "name": "Corner Retail",
+          "description": "Apply for a customer-facing retail job.",
+          "status": "available",
+          "actions": ["browse_jobs"],
+          "job_ids": ["retail_assistant"]
+        },
+        {
+          "id": "street_market",
+          "name": "Street Market",
+          "description": "Launch and manage a compact food stall business.",
+          "status": "available",
+          "actions": ["small_business"],
+          "business_ids": ["street_bowl_kitchen"]
+        },
+        {
+          "id": "barber_shop",
+          "name": "Juniper Barber",
+          "description": "Portrait restyling arrives with the customization expansion.",
+          "status": "unavailable_expansion",
+          "available": false,
+          "expansion": true,
+          "reason": "Character customization expansion not installed.",
+          "unavailable_reason": "Character customization expansion not installed."
+        },
+        {
+          "id": "jewelry_store",
+          "name": "Northstar Jewelry",
+          "description": "Luxury gifts arrive with the family expansion.",
+          "status": "unavailable_expansion",
+          "available": false,
+          "expansion": true,
+          "reason": "Luxury gifts expansion not installed.",
+          "unavailable_reason": "Luxury gifts expansion not installed."
+        },
+        {
+          "id": "dealership",
+          "name": "Metro Motors",
+          "description": "Compare used and new vehicles, cash prices, loans, and insurance.",
+          "status": "available",
+          "actions": ["vehicle_dealer"]
+        }
+      ]
+    },
+    {
+      "id": "industrial",
+      "name": "Industrial",
+      "tagline": "Logistics, workshops, and practical work",
+      "description": "Logistics, workshops, and practical work",
+      "accent": "#3190A5",
+      "locations": [
+        {
+          "id": "freight_warehouse",
+          "name": "Freight Warehouse",
+          "description": "Apply for dependable freight work.",
+          "status": "available",
+          "actions": ["browse_jobs"],
+          "job_ids": ["warehouse_worker"]
+        },
+        {
+          "id": "delivery_depot",
+          "name": "Delivery Depot",
+          "description": "Apply for route-based delivery work.",
+          "status": "available",
+          "actions": ["browse_jobs"],
+          "job_ids": ["delivery_worker"]
+        },
+        {
+          "id": "mining_facility",
+          "name": "Gridworks Mining Co-op",
+          "description": "Fictional coin mining arrives with the mining expansion.",
+          "status": "unavailable_expansion",
+          "available": false,
+          "expansion": true,
+          "reason": "Mining expansion not installed."
+        },
+        {
+          "id": "industrial_garage",
+          "name": "Foundry Garage",
+          "description": "Service owned vehicles before reliability becomes an expensive problem.",
+          "status": "available",
+          "actions": ["vehicle_service"]
+        }
+      ]
+    },
+    {
+      "id": "residential",
+      "name": "Residential",
+      "tagline": "Housing, neighbors, and breathing room",
+      "description": "Housing, neighbors, and breathing room",
+      "accent": "#47A96B",
+      "locations": [
+        {
+          "id": "neighborhood_housing",
+          "name": "Neighborhood Housing Desk",
+          "description": "Compare the family home and a rented room.",
+          "status": "available",
+          "actions": ["browse_housing"],
+          "housing_ids": ["family_home", "rented_room"]
+        },
+        {
+          "id": "riverside_park",
+          "name": "Riverside Park",
+          "description": "Take a low-cost break or meet someone you know.",
+          "status": "available",
+          "actions": ["rest", "relationship_outing"]
+        },
+        {
+          "id": "community_hall",
+          "name": "Community Hall",
+          "description": "Find neighborhood events and ordinary local opportunities.",
+          "status": "available",
+          "actions": ["community_events"]
+        }
+      ]
+    },
+    {
+      "id": "government",
+      "name": "Government",
+      "tagline": "Training, records, and public institutions",
+      "description": "Training, records, and public institutions",
+      "accent": "#D79B2B",
+      "locations": [
+        {
+          "id": "civic_skills_centre",
+          "name": "Civic Skills Centre",
+          "description": "Enroll in the Workplace Readiness Certificate.",
+          "status": "available",
+          "actions": ["browse_courses"],
+          "course_ids": ["workplace_readiness_certificate"]
+        },
+        {
+          "id": "public_services",
+          "name": "Public Services Office",
+          "description": "Review assistance and civic records when circumstances require it.",
+          "status": "available",
+          "actions": ["public_services"]
+        },
+        {
+          "id": "police_station",
+          "name": "Police Station",
+          "description": "Investigations and arrests appear here when triggered by life events.",
+          "status": "contextual",
+          "available": false,
+          "reason": "Available only during an active investigation.",
+          "availability_rule": "crime_case_active"
+        },
+        {
+          "id": "courthouse",
+          "name": "Courthouse",
+          "description": "Court choices appear here only while a case is active.",
+          "status": "contextual",
+          "available": false,
+          "reason": "Available only during an active court case.",
+          "availability_rule": "court_case_active"
+        },
+        {
+          "id": "city_jail",
+          "name": "City Jail",
+          "description": "The weekly jail routine replaces normal city access only after sentencing.",
+          "status": "contextual",
+          "available": false,
+          "reason": "Available only while serving a sentence.",
+          "availability_rule": "jailed"
+        }
+      ]
+    }
+  ]
+}

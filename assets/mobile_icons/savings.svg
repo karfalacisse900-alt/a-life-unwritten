@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs><linearGradient id="pig-body" x1="9" y1="24" x2="52" y2="52" gradientUnits="userSpaceOnUse"><stop stop-color="#FF9DD1"/><stop offset="0.5" stop-color="#F561AB"/><stop offset="1" stop-color="#D84391"/></linearGradient><linearGradient id="pig-coin" x1="27" y1="5" x2="42" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF478"/><stop offset="1" stop-color="#F7A91A"/></linearGradient></defs>
+  <circle cx="35" cy="13.5" r="8.5" fill="url(#pig-coin)" stroke="#14294B" stroke-width="2.4"/>
+  <path d="M35 9.5v8M33 11.2h2.8a1.5 1.5 0 0 1 0 3h-1.6a1.5 1.5 0 0 0 0 3h2.7" fill="none" stroke="#8B5904" stroke-width="1.25" stroke-linecap="round"/>
+  <path d="M14.2 29.4C8.9 29.5 6 26.8 6 23.2c3 .1 5.3 1.4 6.8 3.7" fill="none" stroke="#14294B" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M12 39.5c0-11.1 9.5-19 22-19 4.2 0 8 .9 11.3 2.7l7.1-3.5-.2 9.2c2.4 2.8 3.8 6.4 3.8 10.6 0 9.9-8.7 15.5-21.5 15.5S12 49.4 12 39.5Z" fill="url(#pig-body)" stroke="#14294B" stroke-width="2.8" stroke-linejoin="round"/>
+  <path d="M21 53v4M46 52.2V57" stroke="#14294B" stroke-width="4.5" stroke-linecap="round"/>
+  <ellipse cx="51" cy="38" rx="5" ry="4" fill="#FFB9DC" stroke="#14294B" stroke-width="2"/><circle cx="49.5" cy="37.5" r=".8" fill="#14294B"/><circle cx="53" cy="37.5" r=".8" fill="#14294B"/>
+  <circle cx="41.5" cy="29.8" r="1.7" fill="#14294B"/>
+  <path d="M24.5 24c4.1-1.4 8-1.6 11.8-.5" stroke="#FFF" stroke-width="3" stroke-linecap="round" opacity="0.54"/>
+  <path d="M27.5 19.8h13" stroke="#14294B" stroke-width="2.6" stroke-linecap="round"/>
+</svg>

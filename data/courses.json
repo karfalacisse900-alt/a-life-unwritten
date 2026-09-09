@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "courses": [
+    {
+      "id": "workplace_readiness_certificate",
+      "name": "Workplace Readiness Certificate",
+      "provider": "Civic Skills Centre",
+      "district_id": "government",
+      "location_id": "civic_skills_centre",
+      "description": "A short evening course in workplace safety, organization, and professional communication.",
+      "cost": 280,
+      "enrollment_hours": 2,
+      "weekly_hours": 6,
+      "time_cost": 6,
+      "duration_weeks": 3,
+      "requirements": {
+        "min_age": 18,
+        "max_stress": 85
+      },
+      "education_award": "workplace_readiness_certificate",
+      "skill_rewards": {
+        "administration": 10,
+        "communication": 8,
+        "discipline": 10
+      },
+      "completion_happiness": 4,
+      "completion_reputation": 3
+    }
+  ]
+}

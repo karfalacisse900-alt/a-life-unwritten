@@ -1,0 +1,1194 @@
+{
+  "schema_version": 1,
+  "events": [
+    {
+      "id": "city_noticeboard_weekend_gig",
+      "title": "A Saturday With a Clipboard",
+      "category": "city",
+      "tone": "ordinary",
+      "weight": 8,
+      "text": "A neighborhood group needs someone to count foot traffic for a small planning survey.",
+      "eligibility": {"in_jail": false},
+      "choices": [
+        {
+          "id": "take_gig",
+          "text": "Take the four-hour gig",
+          "known_cost": 0,
+          "requirements": {"weekly_time_min": 4},
+          "outcomes": [
+            {"weight": 1, "text": "The work was dull but dependable, and the organizer paid promptly.", "effects": [{"type": "time", "amount": 4, "reason": "Neighborhood survey"}, {"type": "money", "amount": 85, "reason": "Neighborhood survey pay", "category": "side_income"}, {"type": "reputation", "amount": 1}]}
+          ]
+        },
+        {
+          "id": "decline_gig",
+          "text": "Keep the weekend open",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [
+            {"weight": 1, "text": "You kept your time and let the opportunity pass.", "effects": [{"type": "happiness", "amount": 1}]}
+          ]
+        }
+      ],
+      "cooldown_weeks": 10,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "park_cleanup_invitation",
+      "title": "The Block Looks Brighter",
+      "category": "community",
+      "tone": "positive",
+      "weight": 7,
+      "text": "Volunteers are repainting benches and clearing litter from the residential park.",
+      "eligibility": {"in_jail": false},
+      "choices": [
+        {
+          "id": "volunteer",
+          "text": "Volunteer for three hours",
+          "known_cost": 0,
+          "requirements": {"weekly_time_min": 3, "health_min": 25},
+          "outcomes": [
+            {"weight": 1, "text": "You worked beside people you usually only pass on the street.", "effects": [{"type": "time", "amount": 3, "reason": "Park cleanup"}, {"type": "happiness", "amount": 3}, {"type": "reputation", "amount": 4}, {"type": "stress", "amount": -2}]}
+          ]
+        },
+        {
+          "id": "donate_supplies",
+          "text": "Donate supplies instead",
+          "known_cost": 25,
+          "requirements": {},
+          "outcomes": [
+            {"weight": 1, "text": "The organizers put your supplies straight to work.", "effects": [{"type": "reputation", "amount": 2}]}
+          ]
+        },
+        {
+          "id": "skip",
+          "text": "Skip it",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The park still looked better when the work was done.", "effects": []}]
+        }
+      ],
+      "cooldown_weeks": 16,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "grocery_budget_squeeze",
+      "title": "The Receipt Is Longer Than Usual",
+      "category": "money",
+      "tone": "negative",
+      "weight": 7,
+      "text": "A few essentials cost more this week, forcing an unplanned choice at checkout.",
+      "eligibility": {"in_jail": false},
+      "choices": [
+        {
+          "id": "buy_everything",
+          "text": "Buy the full list",
+          "known_cost": 42,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The cupboards are stocked, even if your wallet feels lighter.", "effects": [{"type": "health", "amount": 2}, {"type": "stress", "amount": -1}]}]
+        },
+        {
+          "id": "stretch_meals",
+          "text": "Stretch simpler meals",
+          "known_cost": 18,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "You made the cheaper basket work, though it was not especially satisfying.", "effects": [{"type": "health", "amount": -1}, {"type": "stress", "amount": 2}]}]
+        }
+      ],
+      "cooldown_weeks": 9,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "forgotten_deposit_refund",
+      "title": "Money From an Old Envelope",
+      "category": "money",
+      "tone": "positive",
+      "weight": 4,
+      "text": "A closed utility account finally returns a forgotten deposit.",
+      "eligibility": {"week_index_min": 4},
+      "choices": [
+        {
+          "id": "accept_refund",
+          "text": "Deposit the refund",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The timing could not have been better.", "effects": [{"type": "money", "amount": 120, "reason": "Returned utility deposit", "category": "refund"}, {"type": "happiness", "amount": 2}]}]
+        }
+      ],
+      "cooldown_weeks": 0,
+      "repeat": "once"
+    },
+    {
+      "id": "community_clinic_screening",
+      "title": "A Preventive Checkup",
+      "category": "health",
+      "tone": "ordinary",
+      "weight": 6,
+      "text": "The public clinic has an opening for a low-cost health screening.",
+      "eligibility": {"in_jail": false, "health_max": 88},
+      "choices": [
+        {
+          "id": "book_screening",
+          "text": "Book the appointment",
+          "known_cost": 30,
+          "requirements": {"weekly_time_min": 2},
+          "outcomes": [
+            {"weight": 1, "text": "The nurse catches a small issue early and gives you a practical plan.", "effects": [{"type": "time", "amount": 2, "reason": "Clinic visit"}, {"type": "stress", "amount": -2}], "delayed": [{"after_weeks": 2, "text": "Following the clinic plan has improved your health.", "effects": [{"type": "health", "amount": 6}]}]}
+          ]
+        },
+        {
+          "id": "wait",
+          "text": "Wait for now",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "You decide the appointment can wait.", "effects": []}]
+        }
+      ],
+      "cooldown_weeks": 18,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "burnout_warning_signs",
+      "title": "Your Patience Is Running Thin",
+      "category": "health",
+      "tone": "difficult",
+      "weight": 10,
+      "text": "Small frustrations feel enormous, and sleep is no longer doing enough.",
+      "eligibility": {"stress_min": 70},
+      "choices": [
+        {
+          "id": "take_slow_weekend",
+          "text": "Protect a quiet weekend",
+          "known_cost": 0,
+          "requirements": {"weekly_time_min": 5},
+          "outcomes": [{"weight": 1, "text": "Turning down extra demands gives your mind room to settle.", "effects": [{"type": "time", "amount": 5, "reason": "Burnout recovery"}, {"type": "stress", "amount": -12}, {"type": "health", "amount": 2}, {"type": "happiness", "amount": 2}]}]
+        },
+        {
+          "id": "push_through",
+          "text": "Push through it",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "You finish what had to be done, but the strain follows you home.", "effects": [{"type": "stress", "amount": 8}, {"type": "health", "amount": -4}, {"type": "employment_performance", "amount": 3}]}]
+        }
+      ],
+      "cooldown_weeks": 6,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "gentle_recovery_plan",
+      "title": "One Manageable Step",
+      "category": "health",
+      "tone": "positive",
+      "weight": 8,
+      "text": "A free neighborhood walking group welcomes beginners and anyone rebuilding their strength.",
+      "eligibility": {"health_max": 55, "in_jail": false},
+      "choices": [
+        {
+          "id": "join_walk",
+          "text": "Join the short walk",
+          "known_cost": 0,
+          "requirements": {"weekly_time_min": 2},
+          "outcomes": [{"weight": 1, "text": "You finish tired but encouraged.", "effects": [{"type": "time", "amount": 2, "reason": "Recovery walk"}, {"type": "health", "amount": 4}, {"type": "happiness", "amount": 2}, {"type": "stress", "amount": -3}]}]
+        },
+        {
+          "id": "rest_home",
+          "text": "Rest at home",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "A quiet day helps a little.", "effects": [{"type": "health", "amount": 1}, {"type": "stress", "amount": -1}]}]
+        }
+      ],
+      "cooldown_weeks": 5,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "found_wallet_choice",
+      "title": "A Wallet Beneath the Bench",
+      "category": "crime",
+      "tone": "difficult",
+      "weight": 5,
+      "text": "You find a wallet containing cash and an address card. Nobody seems to have noticed it yet.",
+      "eligibility": {"in_jail": false},
+      "choices": [
+        {
+          "id": "return_wallet",
+          "text": "Return it intact",
+          "known_cost": 6,
+          "requirements": {"weekly_time_min": 1},
+          "outcomes": [{"weight": 1, "text": "The owner is relieved and tells the neighborhood group about your honesty.", "effects": [{"type": "time", "amount": 1, "reason": "Returning a lost wallet"}, {"type": "reputation", "amount": 6}, {"type": "happiness", "amount": 3}]}]
+        },
+        {
+          "id": "turn_in_wallet",
+          "text": "Turn it in at the station",
+          "known_cost": 0,
+          "requirements": {"weekly_time_min": 1},
+          "outcomes": [{"weight": 1, "text": "You leave it with the desk officer and receive a receipt.", "effects": [{"type": "time", "amount": 1, "reason": "Turning in a lost wallet"}, {"type": "reputation", "amount": 2}]}]
+        },
+        {
+          "id": "keep_cash",
+          "text": "Keep the cash and leave the wallet",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [
+            {"weight": 3, "text": "You pocket the cash, but spend the week glancing over your shoulder.", "effects": [{"type": "money", "amount": 90, "reason": "Cash taken from a found wallet", "category": "crime"}, {"type": "reputation", "amount": -3}, {"type": "stress", "amount": 5}], "delayed": [{"after_weeks": 2, "text": "A nearby camera placed you near the missing wallet.", "effects": [{"type": "crime", "field": "suspicion", "amount": 18}]}]},
+            {"weight": 1, "text": "Someone nearby recognizes you before you can walk away.", "effects": [{"type": "money", "amount": 90, "reason": "Cash taken from a found wallet", "category": "crime"}, {"type": "crime", "field": "suspicion", "amount": 24}, {"type": "reputation", "amount": -7}]}
+          ]
+        }
+      ],
+      "cooldown_weeks": 0,
+      "repeat": "once"
+    },
+    {
+      "id": "unemployed_interview_followup",
+      "title": "The Interviewer Calls Back",
+      "category": "work",
+      "tone": "positive",
+      "weight": 10,
+      "text": "A hiring coordinator offers ten minutes of honest feedback on your last application.",
+      "eligibility": {"employment_status": "unemployed", "in_jail": false},
+      "choices": [
+        {
+          "id": "take_notes",
+          "text": "Listen and take notes",
+          "known_cost": 0,
+          "requirements": {"weekly_time_min": 1},
+          "outcomes": [{"weight": 1, "text": "The feedback is direct, specific, and useful for your next application.", "effects": [{"type": "time", "amount": 1, "reason": "Interview feedback"}, {"type": "skill", "field": "communication", "amount": 3}, {"type": "stress", "amount": -2}, {"type": "flag", "field": "interview_feedback", "value": true}]}]
+        },
+        {
+          "id": "ignore_call",
+          "text": "Let it go to voicemail",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The message expires without changing anything.", "effects": []}]
+        }
+      ],
+      "cooldown_weeks": 8,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "unemployed_job_fair",
+      "title": "Five Employers, One Gymnasium",
+      "category": "work",
+      "tone": "ordinary",
+      "weight": 8,
+      "text": "A public job fair brings warehouse, retail, delivery, security, and office recruiters together.",
+      "eligibility": {"employment_status": "unemployed", "in_jail": false},
+      "choices": [
+        {
+          "id": "attend_prepared",
+          "text": "Print resumes and attend",
+          "known_cost": 12,
+          "requirements": {"weekly_time_min": 4},
+          "outcomes": [{"weight": 1, "text": "You leave with clearer expectations and several names to mention in applications.", "effects": [{"type": "time", "amount": 4, "reason": "Job fair"}, {"type": "skill", "field": "communication", "amount": 2}, {"type": "flag", "field": "job_fair_contact", "value": true}, {"type": "happiness", "amount": 2}]}]
+        },
+        {
+          "id": "stay_home",
+          "text": "Search from home",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "You bookmark a few listings but make no new contacts.", "effects": [{"type": "stress", "amount": 1}]}]
+        }
+      ],
+      "cooldown_weeks": 12,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "workplace_deadline_choice",
+      "title": "A Deadline Starts Slipping",
+      "category": "work",
+      "tone": "difficult",
+      "weight": 9,
+      "text": "A task at work is behind schedule, and your supervisor asks how you plan to recover.",
+      "eligibility": {"employment_status": "employed", "in_jail": false},
+      "choices": [
+        {
+          "id": "ask_for_priorities",
+          "text": "Ask which work matters most",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "Clear priorities help the team finish the important part on time.", "effects": [{"type": "employment_performance", "amount": 5}, {"type": "skill", "field": "communication", "amount": 2}, {"type": "stress", "amount": 2}]}]
+        },
+        {
+          "id": "work_late",
+          "text": "Spend four extra hours on it",
+          "known_cost": 0,
+          "requirements": {"weekly_time_min": 4},
+          "outcomes": [{"weight": 1, "text": "You recover the schedule, but sacrifice most of an evening.", "effects": [{"type": "time", "amount": 4, "reason": "Work deadline"}, {"type": "employment_performance", "amount": 7}, {"type": "stress", "amount": 6}, {"type": "happiness", "amount": -2}]}]
+        },
+        {
+          "id": "hide_delay",
+          "text": "Say it is nearly finished",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The unfinished work is discovered later, costing your supervisor time.", "effects": [{"type": "employment_performance", "amount": -9}, {"type": "reputation", "amount": -2}, {"type": "stress", "amount": 5}]}]
+        }
+      ],
+      "cooldown_weeks": 7,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "coworker_recommendation_offer",
+      "title": "Maya Will Put in a Word",
+      "category": "work",
+      "tone": "positive",
+      "weight": 5,
+      "text": "Maya offers to mention your reliability during the next team meeting.",
+      "eligibility": {"employment_status": "employed", "relationship_min": {"person_id": "person_maya_chen", "field": "trust", "value": 52}},
+      "choices": [
+        {
+          "id": "accept_support",
+          "text": "Thank her and accept",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "Her specific examples carry more weight than vague praise.", "effects": [{"type": "employment_performance", "amount": 6}, {"type": "relationship", "person_id": "person_maya_chen", "field": "trust", "amount": 3}, {"type": "reputation", "amount": 2}]}]
+        },
+        {
+          "id": "decline_support",
+          "text": "Ask to stand on your own work",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "Maya respects the answer, even if the opportunity passes.", "effects": [{"type": "relationship", "person_id": "person_maya_chen", "field": "trust", "amount": 1}]}]
+        }
+      ],
+      "cooldown_weeks": 20,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "earned_promotion_review",
+      "title": "A Seat at the Review Table",
+      "category": "work",
+      "tone": "positive",
+      "weight": 8,
+      "text": "Strong performance earns you a formal pay-and-responsibility review.",
+      "eligibility": {"employment_status": "employed", "employment_performance_min": 75, "employment_weeks_min": 8, "in_jail": false},
+      "choices": [
+        {
+          "id": "make_case",
+          "text": "Present evidence of your work",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [
+            {"weight": 3, "text": "Your preparation makes the decision easy: you earn a promotion and raise.", "effects": [{"type": "employment_promotion", "pay_raise": 45}, {"type": "employment_performance", "amount": -8}, {"type": "happiness", "amount": 6}]},
+            {"weight": 1, "text": "There is no raise this cycle, but your manager commits to specific targets.", "effects": [{"type": "employment_performance", "amount": 2}, {"type": "stress", "amount": 2}]}
+          ]
+        },
+        {
+          "id": "stay_quiet",
+          "text": "Let the review speak for itself",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The meeting ends with praise but no concrete change.", "effects": [{"type": "happiness", "amount": -1}]}]
+        }
+      ],
+      "cooldown_weeks": 26,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "low_performance_warning",
+      "title": "A Quiet Meeting With Your Supervisor",
+      "category": "work",
+      "tone": "negative",
+      "weight": 10,
+      "text": "Your recent performance has slipped enough to trigger a formal warning.",
+      "eligibility": {"employment_status": "employed", "employment_performance_max": 35, "in_jail": false},
+      "choices": [
+        {
+          "id": "request_plan",
+          "text": "Request a written improvement plan",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The expectations are demanding, but at least they are now clear.", "effects": [{"type": "employment_performance", "amount": 5}, {"type": "stress", "amount": 4}, {"type": "flag", "field": "on_performance_plan", "value": true}]}]
+        },
+        {
+          "id": "deflect_blame",
+          "text": "Blame the schedule",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The explanation sounds like an excuse and the warning remains.", "effects": [{"type": "employment_performance", "amount": -6}, {"type": "reputation", "amount": -2}, {"type": "stress", "amount": 5}]}]
+        }
+      ],
+      "cooldown_weeks": 8,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "training_study_group",
+      "title": "Study Group at the Library",
+      "category": "education",
+      "tone": "positive",
+      "weight": 10,
+      "text": "Other students in the workplace readiness course invite you to review together.",
+      "eligibility": {"active_activity_ids": ["workplace_readiness_certificate"], "in_jail": false},
+      "choices": [
+        {
+          "id": "join_group",
+          "text": "Join for three hours",
+          "known_cost": 8,
+          "requirements": {"weekly_time_min": 3},
+          "outcomes": [{"weight": 1, "text": "Explaining the material out loud makes it stick.", "effects": [{"type": "time", "amount": 3, "reason": "Course study group"}, {"type": "skill", "field": "communication", "amount": 2}, {"type": "activity_progress", "activity_id": "workplace_readiness_certificate", "amount": 1}, {"type": "stress", "amount": -1}]}]
+        },
+        {
+          "id": "study_alone",
+          "text": "Study alone for two hours",
+          "known_cost": 0,
+          "requirements": {"weekly_time_min": 2},
+          "outcomes": [{"weight": 1, "text": "The quiet session is useful, if less memorable.", "effects": [{"type": "time", "amount": 2, "reason": "Course study"}, {"type": "activity_progress", "activity_id": "workplace_readiness_certificate", "amount": 1}]}]
+        }
+      ],
+      "cooldown_weeks": 4,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "family_home_house_rules",
+      "title": "A Conversation About House Rules",
+      "category": "housing",
+      "tone": "ordinary",
+      "weight": 8,
+      "text": "Living with family keeps costs low, but Jordan wants a clearer share of chores.",
+      "eligibility": {"housing_ids": ["family_home"], "in_jail": false},
+      "choices": [
+        {
+          "id": "take_more_chores",
+          "text": "Take a regular chore shift",
+          "known_cost": 0,
+          "requirements": {"weekly_time_min": 2},
+          "outcomes": [{"weight": 1, "text": "The arrangement feels fairer and the house is calmer.", "effects": [{"type": "time", "amount": 2, "reason": "Household chores"}, {"type": "relationship", "person_id": "person_jordan_hale", "field": "trust", "amount": 5}, {"type": "reputation", "amount": 1}, {"type": "stress", "amount": -2}]}]
+        },
+        {
+          "id": "offer_cash",
+          "text": "Offer extra household money",
+          "known_cost": 45,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "Jordan accepts, but reminds you that money does not wash dishes.", "effects": [{"type": "relationship", "person_id": "person_jordan_hale", "field": "trust", "amount": 2}]}]
+        },
+        {
+          "id": "refuse",
+          "text": "Refuse to change the arrangement",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The room gets quiet in the uncomfortable way.", "effects": [{"type": "relationship", "person_id": "person_jordan_hale", "field": "tension", "amount": 10}, {"type": "happiness", "amount": -3}]}]
+        }
+      ],
+      "cooldown_weeks": 14,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "rented_room_minor_repair",
+      "title": "The Window Will Not Close",
+      "category": "housing",
+      "tone": "negative",
+      "weight": 8,
+      "text": "A warped latch leaves cold air slipping into your rented room.",
+      "eligibility": {"housing_ids": ["rented_room"], "in_jail": false},
+      "choices": [
+        {
+          "id": "buy_latch",
+          "text": "Replace the latch yourself",
+          "known_cost": 28,
+          "requirements": {"weekly_time_min": 2},
+          "outcomes": [{"weight": 1, "text": "It takes two attempts, but the room is warm again.", "effects": [{"type": "time", "amount": 2, "reason": "Window repair"}, {"type": "skill", "field": "practical", "amount": 2}, {"type": "health", "amount": 1}]}]
+        },
+        {
+          "id": "report_landlord",
+          "text": "Report it to the landlord",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "A repair is promised, though not immediately.", "effects": [{"type": "stress", "amount": 2}], "delayed": [{"after_weeks": 2, "text": "The landlord finally replaces the faulty latch.", "effects": [{"type": "stress", "amount": -3}, {"type": "health", "amount": 1}]}]}]
+        }
+      ],
+      "cooldown_weeks": 20,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "apartment_neighbor_noise",
+      "title": "Bass Through the Wall",
+      "category": "housing",
+      "tone": "ordinary",
+      "weight": 7,
+      "text": "A new neighbor has discovered both large speakers and late nights.",
+      "eligibility": {"housing_ids": ["city_apartment"], "in_jail": false},
+      "choices": [
+        {
+          "id": "speak_kindly",
+          "text": "Knock and speak kindly",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 3, "text": "They apologize and lower the volume.", "effects": [{"type": "stress", "amount": -2}, {"type": "reputation", "amount": 1}]}, {"weight": 1, "text": "They take it badly and turn the volume down only a little.", "effects": [{"type": "stress", "amount": 3}]}]
+        },
+        {
+          "id": "buy_earplugs",
+          "text": "Buy good earplugs",
+          "known_cost": 16,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "It is not justice, but it is sleep.", "effects": [{"type": "stress", "amount": -1}, {"type": "health", "amount": 1}]}]
+        }
+      ],
+      "cooldown_weeks": 18,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "housing_downsize_offer",
+      "title": "A Cheaper Room Opens Up",
+      "category": "housing",
+      "tone": "positive",
+      "weight": 8,
+      "text": "Ellis hears about a modest room with lower monthly rent. Moving would cost time and a deposit.",
+      "eligibility": {"housing_ids": ["city_apartment"], "debt_min": 250, "in_jail": false},
+      "choices": [
+        {
+          "id": "reserve_viewing",
+          "text": "Reserve a viewing",
+          "known_cost": 15,
+          "requirements": {"weekly_time_min": 2},
+          "outcomes": [{"weight": 1, "text": "The room is real and affordable. It is now highlighted in your housing options.", "effects": [{"type": "time", "amount": 2, "reason": "Housing viewing"}, {"type": "flag", "field": "discount_room_lead", "value": true}, {"type": "relationship", "person_id": "person_ellis_park", "field": "trust", "amount": 2}, {"type": "stress", "amount": -3}]}]
+        },
+        {
+          "id": "keep_apartment",
+          "text": "Keep your current apartment",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "You keep the privacy and the larger monthly bill.", "effects": [{"type": "happiness", "amount": 1}]}]
+        }
+      ],
+      "cooldown_weeks": 16,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "overdue_balance_call",
+      "title": "The Number Keeps Calling",
+      "category": "debt",
+      "tone": "negative",
+      "weight": 12,
+      "text": "A creditor calls about your outstanding balance and asks for a concrete plan.",
+      "eligibility": {"debt_min": 100},
+      "choices": [
+        {
+          "id": "make_goodwill_payment",
+          "text": "Make a $75 goodwill payment",
+          "known_cost": 75,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The payment reduces the balance and buys some breathing room.", "effects": [{"type": "debt", "amount": -75}, {"type": "stress", "amount": -3}, {"type": "reputation", "amount": 1}]}]
+        },
+        {
+          "id": "negotiate",
+          "text": "Ask for a hardship plan",
+          "known_cost": 0,
+          "requirements": {"weekly_time_min": 1},
+          "outcomes": [{"weight": 3, "text": "A patient representative arranges smaller scheduled payments.", "effects": [{"type": "time", "amount": 1, "reason": "Debt negotiation"}, {"type": "flag", "field": "hardship_plan", "value": true}, {"type": "stress", "amount": -4}]}, {"weight": 1, "text": "The creditor refuses new terms and repeats the due date.", "effects": [{"type": "time", "amount": 1, "reason": "Debt negotiation"}, {"type": "stress", "amount": 5}]}]
+        },
+        {
+          "id": "ignore",
+          "text": "Ignore the call",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The silence does not make the balance disappear.", "effects": [{"type": "stress", "amount": 5}, {"type": "reputation", "amount": -2}], "delayed": [{"after_weeks": 3, "text": "A late charge is added to the ignored balance.", "effects": [{"type": "debt", "amount": 35}]}]}]
+        }
+      ],
+      "cooldown_weeks": 6,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "debt_counseling_session",
+      "title": "A Plan With Actual Numbers",
+      "category": "debt",
+      "tone": "positive",
+      "weight": 7,
+      "text": "The public services office offers a free debt-counseling appointment.",
+      "eligibility": {"debt_min": 500, "in_jail": false},
+      "choices": [
+        {
+          "id": "attend",
+          "text": "Attend the session",
+          "known_cost": 0,
+          "requirements": {"weekly_time_min": 3},
+          "outcomes": [{"weight": 1, "text": "You leave with a realistic payment order instead of a pile of worries.", "effects": [{"type": "time", "amount": 3, "reason": "Debt counseling"}, {"type": "flag", "field": "debt_counseling", "value": true}, {"type": "skill", "field": "finance", "amount": 3}, {"type": "stress", "amount": -7}]}]
+        },
+        {
+          "id": "skip",
+          "text": "Skip the appointment",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The same bills wait on the same table.", "effects": [{"type": "stress", "amount": 2}]}]
+        }
+      ],
+      "cooldown_weeks": 20,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "empty_wallet_week",
+      "title": "Not Enough for the Small Things",
+      "category": "money",
+      "tone": "difficult",
+      "weight": 12,
+      "text": "After essentials, there is barely anything left for transport or food.",
+      "eligibility": {"cash_max": 50, "in_jail": false},
+      "choices": [
+        {
+          "id": "ask_jordan",
+          "text": "Ask Jordan for groceries",
+          "known_cost": 0,
+          "requirements": {"relationship_min": {"person_id": "person_jordan_hale", "field": "trust", "value": 40}},
+          "outcomes": [{"weight": 1, "text": "Jordan arrives with groceries and no lecture this time.", "effects": [{"type": "relationship", "person_id": "person_jordan_hale", "field": "closeness", "amount": 2}, {"type": "health", "amount": 2}, {"type": "stress", "amount": -4}]}]
+        },
+        {
+          "id": "visit_food_pantry",
+          "text": "Visit the community pantry",
+          "known_cost": 4,
+          "requirements": {"weekly_time_min": 2},
+          "outcomes": [{"weight": 1, "text": "The volunteers treat the visit as ordinary, which helps more than expected.", "effects": [{"type": "time", "amount": 2, "reason": "Community pantry visit"}, {"type": "health", "amount": 2}, {"type": "stress", "amount": -3}]}]
+        },
+        {
+          "id": "skip_meals",
+          "text": "Skip meals until payday",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The week crawls by and your body notices.", "effects": [{"type": "health", "amount": -6}, {"type": "stress", "amount": 6}, {"type": "employment_performance", "amount": -3}]}]
+        }
+      ],
+      "cooldown_weeks": 4,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "business_bulk_order",
+      "title": "The Biggest Order Yet",
+      "category": "business",
+      "tone": "positive",
+      "weight": 10,
+      "text": "A local event wants a large order from Street Bowl Kitchen on a tight schedule.",
+      "eligibility": {"business_active": true, "in_jail": false},
+      "choices": [
+        {
+          "id": "accept_carefully",
+          "text": "Accept and buy extra supplies",
+          "known_cost": 140,
+          "requirements": {"weekly_time_min": 5},
+          "outcomes": [{"weight": 3, "text": "Careful prep keeps quality high and the organizer pays in full.", "effects": [{"type": "time", "amount": 5, "reason": "Bulk business order"}, {"type": "money", "amount": 330, "reason": "Bulk catering payment", "category": "business"}, {"type": "business", "field": "reputation", "amount": 5}, {"type": "business", "field": "demand", "amount": 3}, {"type": "stress", "amount": 5}]}, {"weight": 1, "text": "The order is delivered, but rush costs consume most of the margin.", "effects": [{"type": "time", "amount": 5, "reason": "Bulk business order"}, {"type": "money", "amount": 175, "reason": "Bulk catering payment", "category": "business"}, {"type": "stress", "amount": 8}]}]
+        },
+        {
+          "id": "decline_order",
+          "text": "Decline beyond current capacity",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The organizer appreciates the quick, honest answer.", "effects": [{"type": "business", "field": "reputation", "amount": 1}, {"type": "stress", "amount": -1}]}]
+        }
+      ],
+      "cooldown_weeks": 10,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "business_bad_review",
+      "title": "One Star and a Long Paragraph",
+      "category": "business",
+      "tone": "negative",
+      "weight": 8,
+      "text": "A customer posts a harsh review after receiving the wrong order.",
+      "eligibility": {"business_active": true},
+      "choices": [
+        {
+          "id": "refund_and_reply",
+          "text": "Refund and reply calmly",
+          "known_cost": 35,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The customer updates the review to mention your fair response.", "effects": [{"type": "business", "field": "reputation", "amount": 2}, {"type": "reputation", "amount": 1}, {"type": "stress", "amount": 2}]}]
+        },
+        {
+          "id": "argue_online",
+          "text": "Argue publicly",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "Screenshots travel farther than the original complaint.", "effects": [{"type": "business", "field": "reputation", "amount": -8}, {"type": "reputation", "amount": -4}, {"type": "stress", "amount": 6}]}]
+        },
+        {
+          "id": "review_process",
+          "text": "Fix the order-check process",
+          "known_cost": 20,
+          "requirements": {"weekly_time_min": 3},
+          "outcomes": [{"weight": 1, "text": "The review remains, but the mistake is much less likely to repeat.", "effects": [{"type": "time", "amount": 3, "reason": "Business process review"}, {"type": "business", "field": "reputation", "amount": 1}, {"type": "business", "field": "capacity", "amount": 1}, {"type": "skill", "field": "business", "amount": 2}]}]
+        }
+      ],
+      "cooldown_weeks": 12,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "business_supplier_discount",
+      "title": "A Supplier Wants Loyalty",
+      "category": "business",
+      "tone": "ordinary",
+      "weight": 6,
+      "text": "A supplier offers lower ingredient prices if you commit to a longer arrangement.",
+      "eligibility": {"business_active": true, "business_reputation_min": 42},
+      "choices": [
+        {
+          "id": "negotiate_terms",
+          "text": "Negotiate the commitment",
+          "known_cost": 0,
+          "requirements": {"skills_min": {"communication": 25}},
+          "outcomes": [{"weight": 1, "text": "You secure a flexible discount without locking up all your cash.", "effects": [{"type": "skill", "field": "communication", "amount": 2}, {"type": "flag", "field": "supplier_discount", "value": true}]}]
+        },
+        {
+          "id": "accept_terms",
+          "text": "Accept the standard terms",
+          "known_cost": 60,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The discount helps, though the commitment reduces flexibility.", "effects": [{"type": "flag", "field": "supplier_contract", "value": true}]}]
+        },
+        {
+          "id": "decline",
+          "text": "Keep buying as needed",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "You keep your options open.", "effects": []}]
+        }
+      ],
+      "cooldown_weeks": 20,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "business_staff_conflict",
+      "title": "Two Shifts, One Grudge",
+      "category": "business",
+      "tone": "difficult",
+      "weight": 7,
+      "text": "A scheduling disagreement between staff is beginning to affect customers.",
+      "eligibility": {"business_active": true, "business_staff_min": 1},
+      "choices": [
+        {
+          "id": "mediate",
+          "text": "Mediate after closing",
+          "known_cost": 0,
+          "requirements": {"weekly_time_min": 3},
+          "outcomes": [{"weight": 1, "text": "Neither person gets everything, but both accept the new schedule.", "effects": [{"type": "time", "amount": 3, "reason": "Staff mediation"}, {"type": "business", "field": "reputation", "amount": 2}, {"type": "skill", "field": "communication", "amount": 2}, {"type": "stress", "amount": 3}]}]
+        },
+        {
+          "id": "ignore_conflict",
+          "text": "Let them sort it out",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The conflict spills into a busy shift.", "effects": [{"type": "business", "field": "reputation", "amount": -5}, {"type": "business", "field": "capacity", "amount": -2}, {"type": "stress", "amount": 4}]}]
+        }
+      ],
+      "cooldown_weeks": 14,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "friend_needs_a_lift",
+      "title": "Ellis Has Had a Rough Week",
+      "category": "relationships",
+      "tone": "ordinary",
+      "weight": 7,
+      "text": "Ellis asks whether you can spare an evening to listen, not solve anything.",
+      "eligibility": {"relationship_min": {"person_id": "person_ellis_park", "field": "closeness", "value": 35}, "in_jail": false},
+      "choices": [
+        {
+          "id": "show_up",
+          "text": "Bring dinner and listen",
+          "known_cost": 24,
+          "requirements": {"weekly_time_min": 3},
+          "outcomes": [{"weight": 1, "text": "Ellis remembers that you did not rush the conversation.", "effects": [{"type": "time", "amount": 3, "reason": "Supporting Ellis"}, {"type": "relationship", "person_id": "person_ellis_park", "field": "closeness", "amount": 7}, {"type": "relationship", "person_id": "person_ellis_park", "field": "trust", "amount": 6}, {"type": "happiness", "amount": 2}]}]
+        },
+        {
+          "id": "send_message",
+          "text": "Send a thoughtful message",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "It helps, though Ellis had hoped to see you.", "effects": [{"type": "relationship", "person_id": "person_ellis_park", "field": "closeness", "amount": 2}]}]
+        },
+        {
+          "id": "avoid",
+          "text": "Say you are too busy",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "Ellis says it is fine. It does not sound fine.", "effects": [{"type": "relationship", "person_id": "person_ellis_park", "field": "closeness", "amount": -5}, {"type": "relationship", "person_id": "person_ellis_park", "field": "tension", "amount": 5}]}]
+        }
+      ],
+      "cooldown_weeks": 16,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "coworker_credit_conflict",
+      "title": "Who Gets Credit?",
+      "category": "relationships",
+      "tone": "difficult",
+      "weight": 7,
+      "text": "Maya presents a shared idea without mentioning your contribution.",
+      "eligibility": {"employment_status": "employed", "relationship_min": {"person_id": "person_maya_chen", "field": "closeness", "value": 20}, "in_jail": false},
+      "choices": [
+        {
+          "id": "speak_privately",
+          "text": "Raise it privately",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 3, "text": "Maya apologizes and corrects the record in the next meeting.", "effects": [{"type": "relationship", "person_id": "person_maya_chen", "field": "trust", "amount": 4}, {"type": "relationship", "person_id": "person_maya_chen", "field": "tension", "amount": -2}, {"type": "employment_performance", "amount": 2}]}, {"weight": 1, "text": "Maya becomes defensive, but now knows you noticed.", "effects": [{"type": "relationship", "person_id": "person_maya_chen", "field": "tension", "amount": 7}, {"type": "stress", "amount": 3}]}]
+        },
+        {
+          "id": "call_out_meeting",
+          "text": "Correct her during the meeting",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "You get credit, but the working relationship turns colder.", "effects": [{"type": "employment_performance", "amount": 1}, {"type": "relationship", "person_id": "person_maya_chen", "field": "closeness", "amount": -6}, {"type": "relationship", "person_id": "person_maya_chen", "field": "tension", "amount": 10}]}]
+        },
+        {
+          "id": "let_go",
+          "text": "Let it go this time",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The meeting moves on, but resentment does not.", "effects": [{"type": "relationship", "person_id": "person_maya_chen", "field": "tension", "amount": 5}, {"type": "happiness", "amount": -2}]}]
+        }
+      ],
+      "cooldown_weeks": 18,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "romantic_turning_point",
+      "title": "Nia Asks What This Is",
+      "category": "relationships",
+      "tone": "positive",
+      "weight": 6,
+      "text": "After another long conversation, Nia asks whether the connection could be more than friendship.",
+      "eligibility": {"relationship_min": {"person_id": "person_nia_brooks", "field": "closeness", "value": 55}, "relationship_status": {"person_id": "person_nia_brooks", "values": ["friend", "dating"]}, "in_jail": false},
+      "choices": [
+        {
+          "id": "be_open",
+          "text": "Say you want to explore it",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The honesty is a little scary and mostly wonderful.", "effects": [{"type": "relationship_status", "person_id": "person_nia_brooks", "value": "dating"}, {"type": "relationship", "person_id": "person_nia_brooks", "field": "closeness", "amount": 6}, {"type": "relationship", "person_id": "person_nia_brooks", "field": "trust", "amount": 5}, {"type": "happiness", "amount": 7}]}]
+        },
+        {
+          "id": "stay_friends",
+          "text": "Say friendship matters more",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "Nia needs a moment, then thanks you for being clear.", "effects": [{"type": "relationship", "person_id": "person_nia_brooks", "field": "trust", "amount": 2}, {"type": "relationship", "person_id": "person_nia_brooks", "field": "closeness", "amount": -2}]}]
+        }
+      ],
+      "cooldown_weeks": 0,
+      "repeat": "once"
+    },
+    {
+      "id": "family_checkin_dinner",
+      "title": "Jordan Saves You a Seat",
+      "category": "relationships",
+      "tone": "positive",
+      "weight": 6,
+      "text": "Jordan invites you to a simple family dinner with no special occasion attached.",
+      "eligibility": {"relationship_min": {"person_id": "person_jordan_hale", "field": "closeness", "value": 30}, "in_jail": false},
+      "choices": [
+        {
+          "id": "go_dinner",
+          "text": "Go to dinner",
+          "known_cost": 10,
+          "requirements": {"weekly_time_min": 3},
+          "outcomes": [{"weight": 1, "text": "Nothing dramatic happens, and that is exactly what you needed.", "effects": [{"type": "time", "amount": 3, "reason": "Family dinner"}, {"type": "relationship", "person_id": "person_jordan_hale", "field": "closeness", "amount": 5}, {"type": "stress", "amount": -5}, {"type": "happiness", "amount": 3}]}]
+        },
+        {
+          "id": "rain_check",
+          "text": "Ask for a rain check",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "Jordan understands, but makes you promise to pick a date.", "effects": [{"type": "relationship", "person_id": "person_jordan_hale", "field": "closeness", "amount": -1}]}]
+        }
+      ],
+      "cooldown_weeks": 12,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "mentor_business_challenge",
+      "title": "Theo Questions Your Numbers",
+      "category": "relationships",
+      "tone": "ordinary",
+      "weight": 6,
+      "text": "Theo thinks your business plan relies too much on a single good week.",
+      "eligibility": {"business_active": true, "relationship_min": {"person_id": "person_theo_vance", "field": "trust", "value": 35}},
+      "choices": [
+        {
+          "id": "review_numbers",
+          "text": "Review every assumption together",
+          "known_cost": 0,
+          "requirements": {"weekly_time_min": 3},
+          "outcomes": [{"weight": 1, "text": "The revised plan is less exciting and far more useful.", "effects": [{"type": "time", "amount": 3, "reason": "Business mentoring"}, {"type": "skill", "field": "business", "amount": 3}, {"type": "business", "field": "reputation", "amount": 2}, {"type": "relationship", "person_id": "person_theo_vance", "field": "trust", "amount": 4}]}]
+        },
+        {
+          "id": "dismiss_concern",
+          "text": "Trust your instincts",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "Theo lets the subject drop, unconvinced.", "effects": [{"type": "relationship", "person_id": "person_theo_vance", "field": "trust", "amount": -4}, {"type": "stress", "amount": 2}]}]
+        }
+      ],
+      "cooldown_weeks": 14,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "anonymous_shortcut_offer",
+      "title": "An Easy Score, According to a Stranger",
+      "category": "crime",
+      "tone": "difficult",
+      "weight": 6,
+      "text": "A stranger offers cash for carrying a sealed parcel across town and refuses to explain what it contains.",
+      "eligibility": {"in_jail": false, "suspicion_max": 70},
+      "choices": [
+        {
+          "id": "walk_away",
+          "text": "Walk away",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The stranger disappears into the crowd, and you keep your distance.", "effects": [{"type": "stress", "amount": -1}, {"type": "reputation", "amount": 1}]}]
+        },
+        {
+          "id": "report_offer",
+          "text": "Report the approach",
+          "known_cost": 0,
+          "requirements": {"weekly_time_min": 1},
+          "outcomes": [{"weight": 1, "text": "You provide a description without placing yourself deeper in the situation.", "effects": [{"type": "time", "amount": 1, "reason": "Police report"}, {"type": "reputation", "amount": 3}, {"type": "crime", "field": "suspicion", "amount": -4}]}]
+        },
+        {
+          "id": "take_parcel",
+          "text": "Carry the parcel",
+          "known_cost": 0,
+          "requirements": {"weekly_time_min": 2},
+          "outcomes": [
+            {"weight": 2, "text": "You are paid and hear nothing more—for now.", "effects": [{"type": "time", "amount": 2, "reason": "Anonymous errand"}, {"type": "money", "amount": 210, "reason": "Anonymous parcel payment", "category": "crime"}, {"type": "crime", "field": "suspicion", "amount": 8}, {"type": "stress", "amount": 7}], "delayed": [{"after_weeks": 3, "text": "Investigators trace the anonymous parcel route back toward you.", "effects": [{"type": "crime", "field": "suspicion", "amount": 22}]}]},
+            {"weight": 1, "text": "Officers stop the handoff and record your involvement.", "effects": [{"type": "time", "amount": 2, "reason": "Anonymous errand"}, {"type": "money", "amount": 210, "reason": "Anonymous parcel payment", "category": "crime"}, {"type": "crime", "field": "suspicion", "amount": 32}, {"type": "crime", "field": "record", "amount": 1}, {"type": "reputation", "amount": -10}]}]
+        }
+      ],
+      "cooldown_weeks": 20,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "investigation_questions",
+      "title": "Two Investigators at the Door",
+      "category": "crime",
+      "tone": "negative",
+      "weight": 14,
+      "text": "Investigators ask about recent incidents connected to places you visited.",
+      "eligibility": {"in_jail": false, "suspicion_min": 25},
+      "choices": [
+        {
+          "id": "seek_counsel",
+          "text": "Ask Ren for legal guidance",
+          "known_cost": 0,
+          "requirements": {"weekly_time_min": 2},
+          "outcomes": [{"weight": 1, "text": "Ren helps you answer carefully and truthfully without guessing.", "effects": [{"type": "time", "amount": 2, "reason": "Legal consultation"}, {"type": "crime", "field": "suspicion", "amount": -10}, {"type": "relationship", "person_id": "person_ren_ortiz", "field": "trust", "amount": 4}, {"type": "stress", "amount": 3}]}]
+        },
+        {
+          "id": "answer_alone",
+          "text": "Answer on your own",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 2, "text": "Your account is consistent and the questioning ends.", "effects": [{"type": "crime", "field": "suspicion", "amount": -8}, {"type": "stress", "amount": 4}]}, {"weight": 1, "text": "A contradiction gives investigators another reason to return.", "effects": [{"type": "crime", "field": "suspicion", "amount": 14}, {"type": "stress", "amount": 9}]}]
+        },
+        {
+          "id": "avoid_door",
+          "text": "Do not answer",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "They leave a card. The investigation does not leave with them.", "effects": [{"type": "crime", "field": "suspicion", "amount": 10}, {"type": "stress", "amount": 7}]}]
+        }
+      ],
+      "cooldown_weeks": 6,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "court_summons_arrives",
+      "title": "An Official Envelope",
+      "category": "crime",
+      "tone": "difficult",
+      "weight": 16,
+      "text": "A court summons arrives after the investigation advances.",
+      "eligibility": {"in_jail": false, "suspicion_min": 55},
+      "choices": [
+        {
+          "id": "prepare_with_defender",
+          "text": "Prepare with the public defender",
+          "known_cost": 40,
+          "requirements": {"weekly_time_min": 4},
+          "outcomes": [{"weight": 3, "text": "Ren presents the circumstances clearly. The court imposes a fine but no jail time.", "effects": [{"type": "time", "amount": 4, "reason": "Court preparation"}, {"type": "money", "amount": -120, "reason": "Court fine", "category": "legal"}, {"type": "crime", "field": "record", "amount": 1}, {"type": "crime", "field": "suspicion", "amount": -40}, {"type": "stress", "amount": 8}]}, {"weight": 1, "text": "The evidence is stronger than expected. A short sentence begins next week.", "effects": [{"type": "time", "amount": 4, "reason": "Court preparation"}, {"type": "crime", "field": "record", "amount": 1}, {"type": "crime", "field": "suspicion", "amount": -45}], "delayed": [{"after_weeks": 1, "text": "Your short jail sentence begins.", "effects": [{"type": "crime", "field": "in_jail", "value": true}, {"type": "crime", "field": "jail_weeks", "amount": 4}, {"type": "employment_lost", "reason": "Unable to report to work during a jail sentence"}]}]}]
+        },
+        {
+          "id": "miss_hearing",
+          "text": "Miss the hearing",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The judge treats your absence seriously and issues a short sentence.", "effects": [{"type": "crime", "field": "record", "amount": 1}, {"type": "crime", "field": "suspicion", "amount": -35}], "delayed": [{"after_weeks": 1, "text": "You are taken into custody for the missed hearing.", "effects": [{"type": "crime", "field": "in_jail", "value": true}, {"type": "crime", "field": "jail_weeks", "amount": 6}, {"type": "employment_lost", "reason": "Unable to report to work during a jail sentence"}]}]}]
+        }
+      ],
+      "cooldown_weeks": 10,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "jail_cellmate_boundary",
+      "title": "A Test of Boundaries",
+      "category": "jail",
+      "tone": "difficult",
+      "weight": 10,
+      "text": "Another inmate pressures you to hold a personal item and refuses to explain why.",
+      "eligibility": {"in_jail": true},
+      "choices": [
+        {
+          "id": "decline_calmly",
+          "text": "Decline without escalating",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 3, "text": "The moment passes after a tense silence.", "effects": [{"type": "stress", "amount": 3}, {"type": "reputation", "amount": 1}]}, {"weight": 1, "text": "The refusal causes an argument before staff separate you.", "effects": [{"type": "stress", "amount": 8}, {"type": "health", "amount": -2}]}]
+        },
+        {
+          "id": "tell_staff",
+          "text": "Tell a staff member",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "Staff move you to a different unit, trading one uncertainty for another.", "effects": [{"type": "stress", "amount": 4}, {"type": "crime", "field": "suspicion", "amount": -3}]}]
+        },
+        {
+          "id": "accept_item",
+          "text": "Accept the item",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "A routine search discovers it and costs you time.", "effects": [{"type": "crime", "field": "jail_weeks", "amount": 2}, {"type": "stress", "amount": 7}, {"type": "reputation", "amount": -3}]}]
+        }
+      ],
+      "cooldown_weeks": 5,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "jail_learning_program",
+      "title": "A Classroom Behind Locked Doors",
+      "category": "jail",
+      "tone": "positive",
+      "weight": 8,
+      "text": "A weekly skills class has one open seat.",
+      "eligibility": {"in_jail": true},
+      "choices": [
+        {
+          "id": "join_class",
+          "text": "Join the class",
+          "known_cost": 0,
+          "requirements": {"weekly_time_min": 3},
+          "outcomes": [{"weight": 1, "text": "The routine gives the week structure and adds a useful skill.", "effects": [{"type": "time", "amount": 3, "reason": "Jail learning program"}, {"type": "skill", "field": "practical", "amount": 3}, {"type": "stress", "amount": -4}, {"type": "reputation", "amount": 2}]}]
+        },
+        {
+          "id": "skip_class",
+          "text": "Keep to yourself",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The week feels longer without the class.", "effects": [{"type": "happiness", "amount": -2}]}]
+        }
+      ],
+      "cooldown_weeks": 4,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "reentry_job_interview",
+      "title": "A Second-Chance Interview",
+      "category": "recovery",
+      "tone": "positive",
+      "weight": 12,
+      "text": "A warehouse supervisor offers an interview through a reentry employment program.",
+      "eligibility": {"in_jail": false, "criminal_record_min": 1, "employment_status": "unemployed"},
+      "choices": [
+        {
+          "id": "attend_honestly",
+          "text": "Attend and answer honestly",
+          "known_cost": 8,
+          "requirements": {"weekly_time_min": 3},
+          "outcomes": [{"weight": 1, "text": "The supervisor cannot promise a job, but marks your next warehouse application for review.", "effects": [{"type": "time", "amount": 3, "reason": "Reentry interview"}, {"type": "flag", "field": "reentry_job_referral", "value": true}, {"type": "skill", "field": "communication", "amount": 2}, {"type": "reputation", "amount": 2}, {"type": "stress", "amount": -4}]}]
+        },
+        {
+          "id": "skip_interview",
+          "text": "Skip it",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The program gives the time slot to someone else.", "effects": [{"type": "happiness", "amount": -2}]}]
+        }
+      ],
+      "cooldown_weeks": 10,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "mining_fan_rattle",
+      "title": "A Rattle From the Mining Rig",
+      "category": "mining",
+      "tone": "negative",
+      "weight": 14,
+      "text": "A cooling fan on your fictional-coin mining equipment is failing.",
+      "eligibility": {"mining_equipment": true, "in_jail": false},
+      "choices": [
+        {
+          "id": "replace_fan",
+          "text": "Replace the fan",
+          "known_cost": 90,
+          "requirements": {"weekly_time_min": 2},
+          "outcomes": [{"weight": 1, "text": "The rig returns to a steady hum before heat causes damage.", "effects": [{"type": "time", "amount": 2, "reason": "Mining rig repair"}, {"type": "mining", "field": "condition", "amount": 8}, {"type": "skill", "field": "technical", "amount": 2}]}]
+        },
+        {
+          "id": "power_down",
+          "text": "Power down until later",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "You prevent further damage but lose productive time.", "effects": [{"type": "mining", "field": "condition", "amount": -2}, {"type": "mining", "field": "downtime_weeks", "amount": 1}, {"type": "stress", "amount": 2}]}]
+        },
+        {
+          "id": "keep_running",
+          "text": "Keep it running",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 3, "text": "The fan limps through another week, louder than before.", "effects": [{"type": "mining", "field": "condition", "amount": -8}, {"type": "stress", "amount": 2}]}, {"weight": 1, "text": "The fan fails and overheats a component.", "effects": [{"type": "mining", "field": "condition", "amount": -22}, {"type": "mining", "field": "downtime_weeks", "amount": 2}, {"type": "stress", "amount": 7}]}]
+        }
+      ],
+      "cooldown_weeks": 8,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "mining_efficiency_tip",
+      "title": "A Better Airflow Layout",
+      "category": "mining",
+      "tone": "positive",
+      "weight": 6,
+      "text": "A hobbyist forum suggests a safer airflow layout for equipment like yours.",
+      "eligibility": {"mining_equipment": true, "in_jail": false},
+      "choices": [
+        {
+          "id": "rearrange_rig",
+          "text": "Spend an afternoon rearranging it",
+          "known_cost": 20,
+          "requirements": {"weekly_time_min": 4},
+          "outcomes": [{"weight": 1, "text": "Temperatures fall and the rig wastes a little less power.", "effects": [{"type": "time", "amount": 4, "reason": "Mining airflow project"}, {"type": "mining", "field": "efficiency", "amount": 4}, {"type": "mining", "field": "condition", "amount": 3}, {"type": "skill", "field": "technical", "amount": 2}]}]
+        },
+        {
+          "id": "leave_setup",
+          "text": "Leave the setup alone",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "The existing setup keeps running as before.", "effects": []}]
+        }
+      ],
+      "cooldown_weeks": 16,
+      "repeat": "repeatable"
+    },
+    {
+      "id": "community_reputation_award",
+      "title": "A Small Civic Award",
+      "category": "community",
+      "tone": "positive",
+      "weight": 5,
+      "text": "The neighborhood association recognizes your steady contribution to the city.",
+      "eligibility": {"reputation_min": 65, "in_jail": false},
+      "choices": [
+        {
+          "id": "accept_publicly",
+          "text": "Attend the small ceremony",
+          "known_cost": 12,
+          "requirements": {"weekly_time_min": 2},
+          "outcomes": [{"weight": 1, "text": "The plaque is modest; the introductions afterward are more valuable.", "effects": [{"type": "time", "amount": 2, "reason": "Community award"}, {"type": "reputation", "amount": 5}, {"type": "happiness", "amount": 5}, {"type": "flag", "field": "community_award", "value": true}]}]
+        },
+        {
+          "id": "decline_privately",
+          "text": "Decline the spotlight",
+          "known_cost": 0,
+          "requirements": {},
+          "outcomes": [{"weight": 1, "text": "They mail the certificate and respect your answer.", "effects": [{"type": "happiness", "amount": 2}]}]
+        }
+      ],
+      "cooldown_weeks": 0,
+      "repeat": "once"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "people": [
+    {
+      "id": "person_jordan_hale",
+      "name": "Jordan Hale",
+      "pronouns": "they/them",
+      "role": "family",
+      "occupation": "Transit dispatcher",
+      "portrait": "copper_sun",
+      "bio": "Your older cousin: practical, loyal, and never impressed by shortcuts.",
+      "traits": ["steadfast", "practical"],
+      "initial": {
+        "closeness": 68,
+        "trust": 72,
+        "chemistry": 0,
+        "tension": 8,
+        "status": "family"
+      },
+      "actions": ["spend_time", "ask_help", "gift", "argue"]
+    },
+    {
+      "id": "person_ellis_park",
+      "name": "Ellis Park",
+      "pronouns": "he/him",
+      "role": "friend",
+      "occupation": "Bike courier",
+      "portrait": "mint_cap",
+      "bio": "A longtime friend who knows every inexpensive place in the city.",
+      "traits": ["funny", "resourceful"],
+      "initial": {
+        "closeness": 56,
+        "trust": 52,
+        "chemistry": 18,
+        "tension": 5,
+        "status": "friend"
+      },
+      "actions": ["spend_time", "ask_help", "gift", "argue", "date", "break_up", "business_proposal"]
+    },
+    {
+      "id": "person_maya_chen",
+      "name": "Maya Chen",
+      "pronouns": "she/her",
+      "role": "coworker",
+      "occupation": "Operations coordinator",
+      "portrait": "violet_bob",
+      "bio": "An observant coworker who respects preparation and remembers favors.",
+      "traits": ["ambitious", "observant"],
+      "initial": {
+        "closeness": 30,
+        "trust": 38,
+        "chemistry": 22,
+        "tension": 10,
+        "status": "coworker"
+      },
+      "actions": ["spend_time", "ask_help", "gift", "argue", "date", "break_up", "business_proposal"]
+    },
+    {
+      "id": "person_nia_brooks",
+      "name": "Nia Brooks",
+      "pronouns": "she/her",
+      "role": "neighbor",
+      "occupation": "Community radio producer",
+      "portrait": "coral_curls",
+      "bio": "Your quick-witted neighbor, always collecting stories about the city.",
+      "traits": ["curious", "warm"],
+      "initial": {
+        "closeness": 38,
+        "trust": 36,
+        "chemistry": 48,
+        "tension": 4,
+        "status": "friend"
+      },
+      "actions": ["spend_time", "ask_help", "gift", "argue", "date", "break_up", "business_proposal"]
+    },
+    {
+      "id": "person_theo_vance",
+      "name": "Theo Vance",
+      "pronouns": "he/him",
+      "role": "mentor",
+      "occupation": "Small-business adviser",
+      "portrait": "navy_glasses",
+      "bio": "A cautious volunteer mentor who likes clear numbers and honest answers.",
+      "traits": ["methodical", "candid"],
+      "initial": {
+        "closeness": 28,
+        "trust": 44,
+        "chemistry": 5,
+        "tension": 6,
+        "status": "mentor"
+      },
+      "actions": ["spend_time", "ask_help", "gift", "argue", "business_proposal"]
+    },
+    {
+      "id": "person_samira_okafor",
+      "name": "Samira Okafor",
+      "pronouns": "she/they",
+      "role": "rival",
+      "occupation": "Independent shop owner",
+      "portrait": "gold_braids",
+      "bio": "A sharp local competitor. Respect and rivalry are never far apart.",
+      "traits": ["competitive", "principled"],
+      "initial": {
+        "closeness": 18,
+        "trust": 24,
+        "chemistry": 16,
+        "tension": 42,
+        "status": "rival"
+      },
+      "actions": ["spend_time", "gift", "argue", "business_proposal"]
+    },
+    {
+      "id": "person_ren_ortiz",
+      "name": "Ren Ortiz",
+      "pronouns": "they/them",
+      "role": "public_defender",
+      "occupation": "Public defender",
+      "portrait": "blue_jacket",
+      "bio": "A direct public defender who believes rebuilding starts with the next choice.",
+      "traits": ["direct", "compassionate"],
+      "initial": {
+        "closeness": 12,
+        "trust": 25,
+        "chemistry": 2,
+        "tension": 8,
+        "status": "contact"
+      },
+      "actions": ["spend_time", "ask_help", "gift", "argue"]
+    }
+  ]
+}
