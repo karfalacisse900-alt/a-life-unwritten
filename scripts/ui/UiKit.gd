@@ -80,6 +80,15 @@ func hit_key(action: String, arg: Variant = null) -> String:
 func register(rect: Rect2, action: String, arg: Variant = null, enabled: bool = true) -> void:
 	if enabled: hits.append({"rect":rect, "action":action, "arg":arg})
 
+func _touch_target(rect: Rect2, minimum_height: float = 44.0) -> Rect2:
+	# Keep the visual control compact while giving a thumb a comfortable target.
+	# The expansion is deliberately vertical so adjacent horizontal tabs never
+	# steal one another's taps.
+	if rect.size.y >= minimum_height:
+		return rect
+	var extra := (minimum_height - rect.size.y) * 0.5
+	return Rect2(rect.position - Vector2(0, extra), Vector2(rect.size.x, minimum_height))
+
 func button(rect: Rect2, label: String, action: String, arg: Variant = null, color: Color = BLUE, enabled: bool = true, icon: Texture2D = null) -> void:
 	var fill := color
 	if not enabled: fill = Color("c8cfd8")
@@ -90,13 +99,13 @@ func button(rect: Rect2, label: String, action: String, arg: Variant = null, col
 		text(label, Vector2(rect.position.x + rect.size.y - 2, rect.position.y + rect.size.y * 0.63), 12, WHITE, rect.size.x - rect.size.y, HORIZONTAL_ALIGNMENT_CENTER)
 	else:
 		text(label, Vector2(rect.position.x, rect.position.y + rect.size.y * 0.63), 12, WHITE, rect.size.x, HORIZONTAL_ALIGNMENT_CENTER)
-	register(rect, action, arg, enabled)
+	register(_touch_target(rect), action, arg, enabled)
 
 func chip(rect: Rect2, label: String, selected: bool, action: String, arg: Variant) -> void:
 	if selected:
 		host.draw_rect(Rect2(rect.position.x, rect.end.y - 2, rect.size.x, 2), BLUE_DARK)
 	text(label.capitalize(), Vector2(rect.position.x, rect.position.y + rect.size.y * 0.64), 13, INK if selected else MUTED, rect.size.x, HORIZONTAL_ALIGNMENT_CENTER)
-	register(rect, action, arg)
+	register(_touch_target(rect), action, arg)
 
 func header(title: String, subtitle: String, cash: int, date_text: String) -> void:
 	host.draw_rect(Rect2(0, 0, 540, 92), BG)

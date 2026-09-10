@@ -58,7 +58,8 @@ func _run() -> void:
 	await _capture("desktop")
 	root.size = Vector2i(390, 844)
 	await _capture("phone")
-	game.free()
+	game.queue_free()
+	await process_frame
 	print("UI_RENDER_PASS: creation, five pages, people, crypto ticket, art, vehicles, 540x960, 1000x800, 390x844" if not failed else "UI_RENDER_FAIL")
 	quit(1 if failed else 0)
 

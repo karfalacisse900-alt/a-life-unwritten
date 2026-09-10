@@ -183,7 +183,11 @@ func _draw_district_row(ui: UiKit, district: Dictionary, index: int, y: float) -
 		ui.text(str(index + 1).pad_zeros(2), Vector2(35, y + 46), 13, accent.darkened(0.1), 40, HORIZONTAL_ALIGNMENT_CENTER)
 		ui.text(str(district.get("name", district_id.capitalize())), Vector2(89, y + 30), 15, UiKit.INK, 274)
 		ui.text(_short(str(district.get("description", district.get("summary", "Local services and opportunities"))), 59), Vector2(89, y + 53), 10, UiKit.MUTED, 296)
-		ui.button(Rect2(411, y + 19, 90, 40), "EXPLORE", "open_district", district_id, accent)
+		ui.text("OPEN", Vector2(430, y + 31), 8, accent, 55, HORIZONTAL_ALIGNMENT_RIGHT)
+		ui.text("›", Vector2(466, y + 56), 23, accent, 35, HORIZONTAL_ALIGNMENT_RIGHT)
+		# The whole card is one forgiving touch target. This removes five
+		# competing buttons from the local directory without hiding the affordance.
+		ui.register(Rect2(18, y, 504, height), "open_district", district_id)
 	return y + height + 9.0
 
 
