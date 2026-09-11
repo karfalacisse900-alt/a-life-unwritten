@@ -1,8 +1,44 @@
 class_name AssetIllustrations
 extends RefCounted
 
-## Deliberate vector drawings, plus attributed museum images for art editions.
+## Real catalog photography is used where it improves recognition at a glance;
+## code-drawn fallbacks keep the game lightweight for items without a matching
+## photograph. All downloaded photo credits live in assets/photography/ATTRIBUTION.md.
 static var _textures: Dictionary = {}
+
+const PHOTO_DIR := "res://assets/photography/"
+
+static func _texture(path: String) -> Texture2D:
+	if path.is_empty() or not ResourceLoader.exists(path):
+		return null
+	if not _textures.has(path):
+		_textures[path] = load(path)
+	return _textures[path] as Texture2D
+
+static func _draw_photo(ui: UiKit, path: String, rect: Rect2, cover: bool = true, background: Color = Color("e9ece8")) -> bool:
+	var texture := _texture(path)
+	if texture == null:
+		return false
+	ui.host.draw_rect(rect, background)
+	var inset := rect.grow(-4.0)
+	var source := Rect2(Vector2.ZERO, texture.get_size())
+	var source_ratio := source.size.x / maxf(1.0, source.size.y)
+	var target_ratio := inset.size.x / maxf(1.0, inset.size.y)
+	if cover:
+		if source_ratio > target_ratio:
+			var cropped_width := source.size.y * target_ratio
+			source.position.x = (source.size.x - cropped_width) * 0.5
+			source.size.x = cropped_width
+		else:
+			var cropped_height := source.size.x / target_ratio
+			source.position.y = (source.size.y - cropped_height) * 0.5
+			source.size.y = cropped_height
+		ui.host.draw_texture_rect_region(texture, inset, source)
+	else:
+		var scale := minf(inset.size.x / source.size.x, inset.size.y / source.size.y)
+		var fitted := Rect2(inset.get_center() - source.size * scale * 0.5, source.size * scale)
+		ui.host.draw_texture_rect_region(texture, fitted, source)
+	return true
 
 
 static func draw(ui: UiKit, item: Dictionary, rect: Rect2) -> void:
@@ -26,7 +62,7 @@ static func draw(ui: UiKit, item: Dictionary, rect: Rect2) -> void:
 		return
 	match str(item.get("category_id", "vehicle")):
 		"vehicle": draw_car(ui, item, rect)
-		"property": _draw_property(ui, rect)
+		"property": _draw_property(ui, item, rect)
 		"equipment": _draw_equipment(ui, item, rect)
 		_: _draw_studio_art(ui, item, rect)
 
@@ -34,6 +70,9 @@ static func draw(ui: UiKit, item: Dictionary, rect: Rect2) -> void:
 static func draw_car(ui: UiKit, item: Dictionary, rect: Rect2) -> void:
 	var car_class := str(item.get("class", item.get("kind", "sedan")))
 	var identity := str(item.get("id", item.get("vehicle_id", "")))
+	var photo_path := _vehicle_photo(identity, car_class)
+	if _draw_photo(ui, photo_path, rect, false):
+		return
 	var sporty := car_class in ["hypercar", "supercar", "sports_car", "roadster"] or identity.contains("bugatti")
 	var tall := car_class in ["suv", "van"]
 	var paint := Color(str(item.get("paint_color", "74838b")))
@@ -76,7 +115,9 @@ static func draw_car(ui: UiKit, item: Dictionary, rect: Rect2) -> void:
 		_circle(ui, stage, Vector2(wheel_x,82), 2, Color("e1e6e2"))
 
 
-static func _draw_property(ui: UiKit, rect: Rect2) -> void:
+static func _draw_property(ui: UiKit, item: Dictionary, rect: Rect2) -> void:
+	if _draw_photo(ui, PHOTO_DIR + "modern_house.jpg", rect, true):
+		return
 	ui.host.draw_rect(rect, Color("e7ebe2"))
 	var stage := Rect2(rect.position + Vector2(8,8), rect.size - Vector2(16,16))
 	_poly(ui, stage, [Vector2(34,88),Vector2(34,44),Vector2(118,15),Vector2(206,44),Vector2(206,88)], Color("d7c9b3"))
@@ -86,6 +127,40 @@ static func _draw_property(ui: UiKit, rect: Rect2) -> void:
 		_line(ui, stage, [Vector2(x+10,50),Vector2(x+10,73)], Color("c2d0cb"), 1)
 	_poly(ui, stage, [Vector2(123,53),Vector2(142,53),Vector2(142,88),Vector2(123,88)], Color("725847"))
 	_line(ui, stage, [Vector2(20,90),Vector2(222,90)], Color("88937d"), 3)
+
+
+static func draw_security(ui: UiKit, item: Dictionary, rect: Rect2) -> void:
+	var symbol := str(item.get("symbol", item.get("id", ""))).to_upper()
+	var asset_class := str(item.get("asset_class", "stock"))
+	var photo_path := PHOTO_DIR + "stock_exchange.jpg"
+	match symbol:
+		"BTC": photo_path = PHOTO_DIR + "bitcoin_coins.jpg"
+		"SOL": photo_path = PHOTO_DIR + "solana_logo.png"
+		"ETH": photo_path = PHOTO_DIR + "ethereum_logo.png"
+		"DOGE": photo_path = PHOTO_DIR + "bitcoin_coins.jpg"
+		_:
+			if asset_class == "bond": photo_path = PHOTO_DIR + "bond_certificate.jpg"
+	if _draw_photo(ui, photo_path, rect, not photo_path.ends_with(".png"), Color("eef2f4")):
+		return
+	ui.host.draw_rect(rect, Color("eef2f4"))
+	ui.icon_badge(rect.get_center(), minf(rect.size.x, rect.size.y) * 0.28, symbol.left(1), UiKit.BLUE)
+
+
+static func _vehicle_photo(identity: String, car_class: String) -> String:
+	var id := identity.to_lower()
+	if id.contains("bugatti") or car_class in ["hypercar", "supercar"]:
+		return PHOTO_DIR + "bugatti_veyron.jpg"
+	if id.contains("porsche") or car_class in ["sports_car", "sports_sedan", "roadster"]:
+		return PHOTO_DIR + "porsche_911.jpg"
+	if id.contains("tesla") or car_class == "electric":
+		return PHOTO_DIR + "tesla_model3.jpg"
+	if car_class in ["suv"]:
+		return PHOTO_DIR + "rav4_suv.jpg"
+	if car_class in ["van"]:
+		return PHOTO_DIR + "ford_transit.jpg"
+	if car_class in ["compact", "sedan", "hybrid"]:
+		return PHOTO_DIR + "passat_sedan.jpg"
+	return ""
 
 
 static func _draw_equipment(ui: UiKit, item: Dictionary, rect: Rect2) -> void:

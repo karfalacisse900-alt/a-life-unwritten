@@ -204,8 +204,8 @@ func _draw_security_row(ui: UiKit, state: LifeGameState, item: Dictionary, order
 
 	ui.panel(rect, UiKit.WHITE, UiKit.LINE, 12, 1)
 	ui.host.draw_rect(Rect2(rect.position + Vector2(0, 12), Vector2(3, rect.size.y - 24)), accent)
-	ui.panel(Rect2(rect.position + Vector2(18, 14), Vector2(55, 25)), Color("eef2f6"), Color("d7dee7"), 6, 1)
-	ui.text(symbol, rect.position + Vector2(18, 31), 10, UiKit.BLUE_DARK, 55, HORIZONTAL_ALIGNMENT_CENTER)
+	AssetIllustrations.draw_security(ui, item, Rect2(rect.position + Vector2(18, 10), Vector2(55, 48)))
+	ui.text(symbol, rect.position + Vector2(18, 56), 8, accent.darkened(0.18), 55, HORIZONTAL_ALIGNMENT_CENTER)
 	ui.text(str(item.get("name", symbol)), rect.position + Vector2(84, 29), 14, UiKit.INK, 235)
 	ui.text(str(item.get("sector", "")), rect.position + Vector2(84, 47), 9, UiKit.MUTED, 235)
 	ui.text(_format_cents(price_cents), rect.position + Vector2(335, 29), 18, UiKit.INK, 145, HORIZONTAL_ALIGNMENT_RIGHT)
