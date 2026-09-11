@@ -1,6 +1,15 @@
 # A Life Unwritten
 
-An original, menu-driven 2D life simulation built in GDScript for Godot 4.6.1 or newer. Its portrait-first interface is drawn entirely in code with a production-style design system: measured spacing, neutral surfaces, one-pixel borders, clear typography, compact financial tables, touch-sized controls, and deterministic portrait identities. The live interface uses a small set of clearly attributed public-domain artwork thumbnails and original code-drawn item illustrations.
+An original, menu-driven 2D life simulation built in GDScript for Godot 4.6.1 or newer. Its portrait-first interface is drawn entirely in code with a production-style design system: measured spacing, neutral surfaces, one-pixel borders, clear typography, compact financial tables, touch-sized controls, and deterministic portrait identities. The live interface combines code-drawn UI with clearly attributed real catalog photography, public-domain artwork thumbnails, and original fallback illustrations.
+
+## Project documentation
+
+- [Project summary](PROJECT_SUMMARY.md) — what the app is, who it is for, and what the current build contains.
+- [Game design document](GAME_DESIGN_DOCUMENT.md) — the complete player experience, systems, content rules, and roadmap.
+- [Implementation status](IMPLEMENTATION_STATUS.md) — what is working, what is limited, tests, and known gaps.
+- [AI build prompt](AI_BUILD_PROMPT.md) — a reusable brief for an AI agent or developer continuing the project.
+- [Architecture contract](ARCHITECTURE.md) — state, system APIs, save format, and weekly processing order.
+- [Xogot guide](XOGOT.md) — mobile installation and touch-testing instructions.
 
 ## Start playing
 
@@ -8,7 +17,7 @@ Double-click `PLAY_GAME.bat`. The project uses the regular (non-.NET) portable G
 
 `C:\dev\Godot-4.7.2-standard\Godot_v4.7.2-stable_win64.exe` (or Godot 4.6.1+)
 
-To inspect or edit the project, double-click `OPEN_EDITOR.bat`. You can also import `project.godot` in Godot 4.7.2 or a compatible Godot 4 release.
+To inspect or edit the project, double-click `OPEN_EDITOR.bat`. You can also import `project.godot` in Godot 4.6.1, 4.7.2, or a compatible Godot 4 release.
 
 ## First playable milestone
 

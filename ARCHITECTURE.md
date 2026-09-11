@@ -1,6 +1,6 @@
 # First Playable Architecture Contract
 
-Godot target: 4.7.2, GDScript only. Currency is stored as integer dollars.
+Godot target: 4.6.1 or newer, GDScript only. The Xogot release is verified on Godot 4.6.1; the desktop source is also compatible with Godot 4.7.2. Currency is stored as integer dollars.
 
 ## Shared state
 

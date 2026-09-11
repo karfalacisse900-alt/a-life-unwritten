@@ -8,7 +8,7 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem
 $archiveStream = [IO.File]::Open($outputFile, [IO.FileMode]::CreateNew)
 $archive = [IO.Compression.ZipArchive]::new($archiveStream, [IO.Compression.ZipArchiveMode]::Create)
 try {
-    $sourceFiles = @('project.godot', 'main.tscn', 'README.md', 'XOGOT.md', 'ARCHITECTURE.md') | ForEach-Object { Get-Item -LiteralPath (Join-Path $projectRoot $_) }
+$sourceFiles = @('project.godot', 'main.tscn', 'README.md', 'XOGOT.md', 'ARCHITECTURE.md', 'PROJECT_SUMMARY.md', 'GAME_DESIGN_DOCUMENT.md', 'IMPLEMENTATION_STATUS.md', 'AI_BUILD_PROMPT.md') | ForEach-Object { Get-Item -LiteralPath (Join-Path $projectRoot $_) }
     foreach ($sourceDirectory in @('scripts', 'data', 'assets', 'tests')) {
         $sourceFiles += Get-ChildItem -LiteralPath (Join-Path $projectRoot $sourceDirectory) -Recurse -File |
             Where-Object { $_.Extension -ne '.import' }
